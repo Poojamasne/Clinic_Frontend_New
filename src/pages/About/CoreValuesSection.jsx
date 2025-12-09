@@ -1,5 +1,4 @@
 import { Box, Container, Typography, Grid } from "@mui/material";
-
 import compassionateCareIcon from "../../assets/clinic/ValueIcons/compassionate-care.svg";
 import excellenceIcon from "../../assets/clinic/ValueIcons/excellence.svg";
 import patientCenteredIcon from "../../assets/clinic/ValueIcons/patient-centered.svg";
@@ -37,8 +36,8 @@ export default function CoreValuesSection() {
     <Box
       sx={{
         width: "100%",
-        minHeight: "504px",
-        backgroundColor: "#ffffff",
+        minHeight: { xs: "auto", md: "504px" },
+        backgroundColor: "#F8FAFF",
         py: { xs: 6, sm: 8, md: 10 },
         display: "flex",
         alignItems: "center",
@@ -54,7 +53,7 @@ export default function CoreValuesSection() {
         <Box
           sx={{
             textAlign: "center",
-            mb: { xs: 4, sm: 5, md: 6, lg: 8 },
+            mb: { xs: 4, sm: 5, md: 6, lg: 6 },
             mx: "auto",
             maxWidth: { xs: "100%", sm: "800px", lg: "900px" },
           }}
@@ -65,7 +64,7 @@ export default function CoreValuesSection() {
               fontFamily: "Poppins, sans-serif",
               fontWeight: 500,
               fontSize: { 
-                xs: "28px",
+                xs: "24px",
                 sm: "32px",
                 md: "36px",
                 lg: "40px"
@@ -84,7 +83,7 @@ export default function CoreValuesSection() {
               fontFamily: "Poppins, sans-serif",
               fontWeight: 500,
               fontSize: { 
-                xs: "16px",
+                xs: "18px",
                 sm: "18px",
                 md: "20px",
                 lg: "22px"
@@ -98,43 +97,55 @@ export default function CoreValuesSection() {
           </Typography>
         </Box>
 
-        {/* Values Grid - Matching the frame layout dimensions */}
         <Box
           sx={{
             maxWidth: "1284px",
             minHeight: "388px",
             mx: "auto",
-            px: { xs: 2, sm: 4, md: 6 },
+            px: { xs: 2, sm: 4, md: 4, lg: 0 }, // Reduced on desktop
           }}
         >
           <Grid 
             container 
-            spacing={{ xs: 4, md: 8, lg: 6.2 }} // 62px gap for desktop
+            spacing={{ xs: 3, sm: 4, md: 3, lg: 2 }} // Reduced spacing on desktop
             sx={{
-              justifyContent: "center",
+              justifyContent: { xs: "center", md: "space-between" },
               alignItems: "stretch",
             }}
           >
             {values.map((value, index) => (
               <Grid 
                 item 
-                xs={12} 
-                sm={6} 
-                md={3} 
+                xs={12}
+                sm={6}
+                md={3}
+                lg={3}
                 key={index}
                 sx={{
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                   textAlign: "center",
+                  height: "100%",
+                  px: { lg: 1 }, // Add small padding on desktop
                 }}
               >
                 {/* Icon Container */}
                 <Box
                   sx={{
-                    width: { xs: "80px", sm: "90px", md: "100px", lg: "120px" },
-                    height: { xs: "80px", sm: "90px", md: "100px", lg: "120px" },
-                    mb: { xs: 3, sm: 4, md: 5 },
+                    width: { 
+                      xs: "70px", 
+                      sm: "90px", 
+                      md: "100px", 
+                      lg: "100px" // Reduced from 120px
+                    },
+                    height: { 
+                      xs: "70px", 
+                      sm: "90px", 
+                      md: "100px", 
+                      lg: "100px" // Reduced from 120px
+                    },
+                    mb: { xs: 2, sm: 3, md: 3, lg: 3 }, // Reduced on desktop
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -157,16 +168,17 @@ export default function CoreValuesSection() {
                   variant="h3"
                   sx={{
                     fontFamily: "Poppins, sans-serif",
-                    fontWeight: 600,
+                    fontWeight: 400,
                     fontSize: { 
-                      xs: "18px",
-                      sm: "20px",
-                      md: "22px",
-                      lg: "24px"
+                      xs: "16px",
+                      sm: "18px",
+                      md: "20px",
+                      lg: "22px" // Reduced from 24px
                     },
                     lineHeight: 1.2,
-                    color: "#155DFC",
-                    mb: { xs: 1.5, sm: 2 },
+                    color: "#000000",
+                    mb: { xs: 1, sm: 1.5, md: 1.5, lg: 1.5 }, // Reduced on desktop
+                    px: { xs: 0.5, sm: 0, lg: 0.5 },
                   }}
                 >
                   {value.title}
@@ -178,15 +190,21 @@ export default function CoreValuesSection() {
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 400,
                     fontSize: { 
-                      xs: "14px",
-                      sm: "15px",
-                      md: "16px",
-                      lg: "17px"
+                      xs: "13px",
+                      sm: "14px",
+                      md: "15px",
+                      lg: "15px" // Reduced from 17px
                     },
-                    lineHeight: { xs: 1.5, sm: 1.6 },
+                    lineHeight: { xs: 1.4, sm: 1.5, md: 1.5, lg: 1.5 },
                     color: "#666",
-                    maxWidth: "280px",
+                    maxWidth: { 
+                      xs: "100%", 
+                      sm: "260px", 
+                      md: "250px", 
+                      lg: "250px" // Reduced from 280px
+                    },
                     mx: "auto",
+                    px: { xs: 1, sm: 0.5, md: 0, lg: 0.5 },
                   }}
                 >
                   {value.description}

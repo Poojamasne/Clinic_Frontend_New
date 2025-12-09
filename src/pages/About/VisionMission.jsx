@@ -1,5 +1,5 @@
 // VisionMission.js
-import { Box, Typography, Container } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import boySvg from "../../assets/vision-mission/boy.svg";
 import girlSvg from "../../assets/vision-mission/girl.svg";
 
@@ -12,138 +12,214 @@ export default function VisionMission() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        py: 8,
+        py: { xs: 4, sm: 5, md: 6, lg: 8 },
+        px: { xs: 2, sm: 3, md: 4, lg: 0 },
       }}
     >
       <Box
         sx={{
-          width: "940px",
+          width: "100%",
+          maxWidth: { xs: "100%", sm: "540px", md: "720px", lg: "940px", xl: "1140px" },
           background: "#FFFFFF",
-          borderRadius: "16px",
-          boxShadow: "0px 5px 20px rgba(0,0,0,0.10)",
-          padding: "50px 40px",
+          borderRadius: { xs: "12px", sm: "14px", md: "16px" },
+          boxShadow: {
+            xs: "0px 3px 15px rgba(0,0,0,0.08)",
+            sm: "0px 4px 18px rgba(0,0,0,0.09)",
+            md: "0px 5px 20px rgba(0,0,0,0.10)",
+          },
+          padding: {
+            xs: "30px 20px",
+            sm: "35px 25px",
+            md: "40px 30px",
+            lg: "50px 40px",
+          },
           position: "relative",
           overflow: "hidden",
         }}
       >
-        {/* BOY SVG - LEFT */}
-<Box
-  sx={{
-    display: { xs: "none", lg: "flex" },
-    position: "absolute",
-    left: "50px",
-    top: "25%",               // 🔥 adjust vertical position
-    transform: "translateY(-50%)",
-    width: "230px",
-    height: "200px",
-    zIndex: 0,
-  }}
->
-  <img src={boySvg} style={{ width: "100%" }} alt="boy" />
-</Box>
+        {/* BOY SVG - LEFT - Desktop only (absolute positioning) */}
+        <Box
+          sx={{
+            display: { xs: "none", md: "none", lg: "flex" },
+            position: "absolute",
+            left: { lg: "40px", xl: "50px" },
+            top: "25%",
+            transform: "translateY(-50%)",
+            width: { lg: "200px", xl: "230px" },
+            height: { lg: "170px", xl: "200px" },
+            zIndex: 0,
+          }}
+        >
+          <img
+            src={boySvg}
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            alt="boy illustration"
+          />
+        </Box>
 
+        {/* GIRL SVG - RIGHT - Desktop only (absolute positioning) */}
+        <Box
+          sx={{
+            display: { xs: "none", md: "none", lg: "flex" },
+            position: "absolute",
+            right: { lg: "40px", xl: "50px" },
+            bottom: "25%",
+            transform: "translateY(50%)",
+            width: { lg: "200px", xl: "230px" },
+            height: { lg: "170px", xl: "200px" },
+            zIndex: 0,
+          }}
+        >
+          <img
+            src={girlSvg}
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            alt="girl illustration"
+          />
+        </Box>
 
-        {/* MISSION SECTION */}
+        {/* MISSION SECTION WITH BOY SVG FOR MOBILE/TABLET */}
         <Box
           sx={{
             display: "flex",
-            flexDirection: "column",
-            alignItems: { xs: "left", lg: "left" },
-            textAlign: { xs: "center", lg: "left" },
-            maxWidth: "620px",
-            ml: { lg: "auto" },
-            pr: { lg: "40px" },
+            flexDirection: { xs: "column", md: "column", lg: "row" },
+            alignItems: { xs: "center", md: "center", lg: "flex-start" },
+            textAlign: { xs: "center", md: "center", lg: "left" },
+            position: "relative",
+            zIndex: 1,
+            mb: { xs: 4, sm: 4.5, md: 5, lg: 0 },
           }}
         >
-          <Typography
+          {/* Boy SVG for Mobile/Tablet - ABOVE Mission text */}
+          <Box
             sx={{
-              fontFamily: "Poppins",
-              fontWeight: 600,
-              fontSize: "32px",
-              color: "#155DFC",
+              display: { xs: "flex", md: "flex", lg: "none" },
+              justifyContent: "center",
+              mb: { xs: 2, sm: 2.5, md: 3 },
+              width: { xs: "120px", sm: "140px", md: "160px" },
+              height: { xs: "100px", sm: "120px", md: "140px" },
             }}
           >
-            Our Mission
-          </Typography>
+            <img
+              src={boySvg}
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+              alt="boy illustration"
+            />
+          </Box>
 
-          <Typography
+          <Box
             sx={{
-              fontFamily: "Poppins",
-              fontSize: "16px",
-              color: "#666",
-              mt: 2,
-              lineHeight: "150%",
+              display: "flex",
+              flexDirection: "column",
+              maxWidth: { xs: "100%", lg: "620px" },
+              ml: { lg: "auto" },
+              pr: { lg: "40px" },
             }}
           >
-            To provide exceptional, patient-centered healthcare services by combining
-            medical expertise with compassionate care. We strive to improve the quality
-            of life for every individual through innovative treatments and personalized
-            care plans.
-          </Typography>
+            <Typography
+              sx={{
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: 600,
+                fontSize: { xs: "24px", sm: "26px", md: "28px", lg: "32px" },
+                color: "#155DFC",
+                lineHeight: 1.2,
+              }}
+            >
+              Our Mission
+            </Typography>
+
+            <Typography
+              sx={{
+                fontFamily: "Poppins, sans-serif",
+                fontSize: { xs: "14px", sm: "15px", md: "16px" },
+                color: "#666",
+                mt: { xs: 1.5, sm: 1.75, md: 2 },
+                lineHeight: { xs: "1.5", md: "1.6" },
+                textAlign: { xs: "center", md: "center", lg: "left" },
+              }}
+            >
+              To provide exceptional, patient-centered healthcare services by combining
+              medical expertise with compassionate care. We strive to improve the quality
+              of life for every individual through innovative treatments and personalized
+              care plans.
+            </Typography>
+          </Box>
         </Box>
 
         {/* LINE DIVIDER */}
         <Box
           sx={{
             width: "100%",
-            borderTop: "7px solid #D8E4FF",
+            borderTop: { xs: "4px solid #D8E4FF", sm: "5px solid #D8E4FF", md: "6px solid #D8E4FF", lg: "7px solid #D8E4FF" },
             opacity: 1,
-            my: 5,
+            my: { xs: 4, sm: 4.5, md: 5, lg: 5 },
           }}
         />
 
-        {/* GIRL SVG - RIGHT */} 
-<Box
-  sx={{
-    display: { xs: "none", lg: "flex" },
-    position: "absolute",
-    right: "50px",
-    bottom: "25%",           
-    transform: "translateY(50%)",
-    width: "230px",
-    height: "200px",
-    zIndex: 0,
-  }}
->
-  <img src={girlSvg} style={{ width: "100%" }} alt="girl" />
-</Box>
-
-
-        {/* VISION SECTION */}
+        {/* VISION SECTION WITH GIRL SVG FOR MOBILE/TABLET */}
         <Box
           sx={{
             display: "flex",
-            flexDirection: "column",
-            alignItems: { xs: "center", lg: "flex-start" },
-            textAlign: { xs: "center", lg: "left" },
-            maxWidth: "620px",
-            pl: { lg: "40px" },
+            flexDirection: { xs: "column", md: "column", lg: "row" },
+            alignItems: { xs: "center", md: "center", lg: "flex-start" },
+            textAlign: { xs: "center", md: "center", lg: "left" },
+            position: "relative",
+            zIndex: 1,
           }}
         >
-          <Typography
+          <Box
             sx={{
-              fontFamily: "Poppins",
-              fontWeight: 600,
-              fontSize: "32px",
-              color: "#155DFC",
-              mb: 2,
+              display: "flex",
+              flexDirection: "column",
+              maxWidth: { xs: "100%", lg: "620px" },
+              pl: { lg: "40px" },
+              order: { xs: 2, md: 2, lg: 1 },
             }}
           >
-            Our Vision
-          </Typography>
+            <Typography
+              sx={{
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: 600,
+                fontSize: { xs: "24px", sm: "26px", md: "28px", lg: "32px" },
+                color: "#155DFC",
+                mb: { xs: 1.5, sm: 1.75, md: 2 },
+                lineHeight: 1.2,
+              }}
+            >
+              Our Vision
+            </Typography>
 
-          <Typography
+            <Typography
+              sx={{
+                fontFamily: "Poppins, sans-serif",
+                fontSize: { xs: "14px", sm: "15px", md: "16px" },
+                color: "#666",
+                lineHeight: { xs: "1.5", md: "1.6" },
+                textAlign: { xs: "center", md: "center", lg: "left" },
+              }}
+            >
+              To be the leading healthcare provider recognized for excellence in patient
+              care, innovation, and community well-being. We envision a future where every
+              person has access to compassionate and transformative healthcare.
+            </Typography>
+          </Box>
+
+          {/* Girl SVG for Mobile/Tablet - ABOVE Vision text */}
+          <Box
             sx={{
-              fontFamily: "Poppins",
-              fontSize: "16px",
-              color: "#666",
-              lineHeight: "150%",
+              display: { xs: "flex", md: "flex", lg: "none" },
+              justifyContent: "center",
+              mb: { xs: 2, sm: 2.5, md: 3 },
+              width: { xs: "120px", sm: "140px", md: "160px" },
+              height: { xs: "100px", sm: "120px", md: "140px" },
+              order: { xs: 1, md: 1, lg: 2 },
             }}
           >
-            To be the leading healthcare provider recognized for excellence in patient
-            care, innovation, and community well-being. We envision a future where every
-            person has access to compassionate and transformative healthcare.
-          </Typography>
+            <img
+              src={girlSvg}
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+              alt="girl illustration"
+            />
+          </Box>
         </Box>
       </Box>
     </Box>

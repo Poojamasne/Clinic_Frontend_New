@@ -126,7 +126,7 @@ export default function AboutHeroSection() {
                     lg: "17px"     // Desktop
                   },
                   lineHeight: { xs: 1.6, sm: 1.7, md: 1.75 },
-                  color: "#666",
+                  color: "#000000",
                   textAlign: { xs: "justify", sm: "left" },
                 }}
               >
@@ -144,7 +144,7 @@ export default function AboutHeroSection() {
                     lg: "17px"     // Desktop
                   },
                   lineHeight: { xs: 1.6, sm: 1.7, md: 1.75 },
-                  color: "#666",
+                  color: "#000000",
                   textAlign: { xs: "justify", sm: "left" },
                 }}
               >
@@ -162,7 +162,7 @@ export default function AboutHeroSection() {
                     lg: "17px"     // Desktop
                   },
                   lineHeight: { xs: 1.6, sm: 1.7, md: 1.75 },
-                  color: "#666",
+                  color: "#000000",
                   textAlign: { xs: "justify", sm: "left" },
                 }}
               >

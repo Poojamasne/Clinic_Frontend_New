@@ -33,30 +33,32 @@ export default function OurAchievementSection() {
     <Box
       sx={{
         width: "100%",
-        height: { xs: "auto", md: "463px" },
-        minHeight: { xs: "400px", md: "463px" },
-        backgroundColor: "#F8FAFF",
+        height: { xs: "auto", sm: "auto", md: "463px" },
+        minHeight: { xs: "300px", sm: "350px", md: "463px" },
+        backgroundColor: "#FFFFFF",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        py: { xs: 6, md: 0 },
+        py: { xs: 4, sm: 5, md: 6, lg: 0 },
+        px: { xs: 1, sm: 2, md: 3, lg: 0 },
       }}
     >
       <Container
         maxWidth="lg"
+        disableGutters
         sx={{
-          width: { xs: "100%", md: "1319px" },
-          height: { xs: "auto", md: "348px" },
+          width: "100%",
+          maxWidth: { xs: "100%", sm: "600px", md: "900px", lg: "1200px", xl: "1319px" },
+          height: { xs: "auto", md: "auto", lg: "348px" },
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          gap: { xs: 4, md: "34px" },
-          py: { xs: 3, md: "13px" },
-          px: { xs: 2, md: 4 },
-          marginTop: { xs: 0, md: "47px" },
-          marginLeft: { xs: 0, md: "61px" },
-          marginRight: { xs: 0, md: "61px" },
+          gap: { xs: 3, sm: 4, md: "34px" },
+          py: { xs: 2, sm: 3, md: 4, lg: "13px" },
+          px: { xs: 2, sm: 3, md: 4, lg: 4 },
+          marginTop: { xs: 0, md: "20px", lg: "47px" },
+          marginBottom: { xs: 0, md: "20px", lg: 0 },
         }}
       >
         {/* Header Section */}
@@ -67,7 +69,7 @@ export default function OurAchievementSection() {
             flexDirection: "column",
             alignItems: "center",
             textAlign: "center",
-            gap: { xs: 2, md: 3 },
+            gap: { xs: 1.5, sm: 2, md: 3 },
           }}
         >
           <Typography
@@ -75,9 +77,16 @@ export default function OurAchievementSection() {
             sx={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: 700,
-              fontSize: { xs: "32px", sm: "36px", md: "48px" },
+              fontSize: { 
+                xs: "26px", 
+                sm: "30px", 
+                md: "36px", 
+                lg: "42px", 
+                xl: "48px" 
+              },
               color: "#000000",
-              lineHeight: "1.2",
+              lineHeight: { xs: 1.3, sm: 1.2, md: 1.2 },
+              px: { xs: 1, sm: 0 },
             }}
           >
             Our Achievements
@@ -87,10 +96,17 @@ export default function OurAchievementSection() {
             sx={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: 400,
-              fontSize: { xs: "20px", sm: "18px", md: "20px" },
+              fontSize: { 
+                xs: "16px", 
+                sm: "17px", 
+                md: "18px", 
+                lg: "19px", 
+                xl: "20px" 
+              },
               color: "#000000",
-              lineHeight: "1.5",
-              maxWidth: "800px",
+              lineHeight: { xs: 1.4, sm: 1.5, md: 1.5 },
+              maxWidth: { xs: "90%", sm: "85%", md: "800px" },
+              opacity: 0.8,
             }}
           >
             Milestones that reflect our commitment to excellence
@@ -100,33 +116,48 @@ export default function OurAchievementSection() {
         {/* Achievements Grid */}
         <Box
           sx={{
-            width: { xs: "100%", md: "1319px" },
-            height: { xs: "auto", md: "175px" },
+            width: "100%",
+            height: { xs: "auto", md: "auto", lg: "175px" },
             display: "grid",
             gridTemplateColumns: {
               xs: "1fr",
-              sm: "1fr 1fr",
-              md: "1fr 1fr 1fr",
+              sm: "repeat(2, 1fr)",
+              md: "repeat(2, 1fr)",
+              lg: "repeat(3, 1fr)",
             },
-            gap: { xs: 3, sm: 4, md: "40px" },
+            gap: { xs: 2, sm: 3, md: 3, lg: "40px" },
+            rowGap: { xs: 2, sm: 2.5, md: 3, lg: 3 },
             justifyContent: "center",
             alignItems: "center",
+            justifyItems: "center",
+            px: { xs: 1, sm: 2, md: 3, lg: 0 },
           }}
         >
           {achievements.map((achievement) => (
             <Box
               key={achievement.id}
               sx={{
-                width: { xs: "400px", sm: "100%", md: "400px" },
-                height: { xs: "auto", md: "60px" },
-                minHeight: "40px",
+                width: { 
+                  xs: "100%", 
+                  sm: "100%", 
+                  md: "100%", 
+                  lg: "400px" 
+                },
+                maxWidth: { xs: "100%", sm: "280px", md: "300px", lg: "400px" },
+                height: { xs: "auto", sm: "auto", md: "auto", lg: "60px" },
+                minHeight: { xs: "45px", sm: "50px", md: "55px", lg: "60px" },
                 display: "flex",
                 alignItems: "center",
-                gap: "10px",
+                gap: { xs: "8px", sm: "10px", md: "10px", lg: "10px" },
                 backgroundColor: "white",
-                borderRadius: "9px",
+                borderRadius: { xs: "6px", sm: "7px", md: "8px", lg: "9px" },
                 border: "1px solid #155DFC",
-                p: { xs: "8px 12px", md: "10px 16px" },
+                p: { 
+                  xs: "6px 10px", 
+                  sm: "8px 12px", 
+                  md: "9px 14px", 
+                  lg: "10px 16px" 
+                },
                 boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
                 transition: "all 0.3s ease",
                 "&:hover": {
@@ -142,9 +173,9 @@ export default function OurAchievementSection() {
                 src={checkIcon}
                 alt="check"
                 sx={{
-                  width: "24px",
-                  height: "24px",
-                  minWidth: "24px",
+                  width: { xs: "20px", sm: "22px", md: "23px", lg: "24px" },
+                  height: { xs: "20px", sm: "22px", md: "23px", lg: "24px" },
+                  minWidth: { xs: "20px", sm: "22px", md: "23px", lg: "24px" },
                 }}
               />
 
@@ -153,9 +184,14 @@ export default function OurAchievementSection() {
                 sx={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: 500,
-                  fontSize: { xs: "14px", sm: "15px", md: "16px" },
+                  fontSize: { 
+                    xs: "13px", 
+                    sm: "14px", 
+                    md: "15px", 
+                    lg: "16px" 
+                  },
                   color: "#333333",
-                  lineHeight: "1.4",
+                  lineHeight: { xs: 1.3, sm: 1.4, md: 1.4, lg: 1.4 },
                   flex: 1,
                 }}
               >
