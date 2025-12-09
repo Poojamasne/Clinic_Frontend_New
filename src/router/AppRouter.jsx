@@ -4,6 +4,7 @@ import PageLayout from "../components/common/PageLayout";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import BookAppointment from "../pages/Appointment/BookAppointment";
+import MessageConfirmation from "../pages/Contact/MessageConfirmation";
 
 import Spine from "../pages/Treatments/Spine";
 import GIT from "../pages/Treatments/GIT";
@@ -24,6 +25,7 @@ export default function AppRouter() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/appointment" element={<BookAppointment />} />
+          
 
           {/* Treatments Nested Routes */}
           <Route path="/treatments">
@@ -38,6 +40,8 @@ export default function AppRouter() {
           <Route path="/payment/PaymentPage" element={<PaymentPage />} />
 
           <Route path="/payment/appointment-confirmation" element={<AppointmentConfirmation />} />
+          <Route path="/contact/MessageConfirmation" element={<MessageConfirmation />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ADD THIS
 import {
   Box,
   Typography,
@@ -13,7 +14,7 @@ import {
 // Import SVG icons from assets
 import UserIcon from "../../assets/Appointment/fullName.svg";
 import EmailIcon from "../../assets/Appointment/email.svg";
-import PhoneIcon from "../../assets/Appointment/phone.svg";
+import PhoneIcon from "../../assets/Appointment/Phone-number.svg";
 import SubjectIcon from "../../assets/Appointment/treatment.svg"; 
 import MessageIcon from "../../assets/Appointment/notes.svg"; 
 
@@ -89,6 +90,7 @@ const MessageIconComponent = () => (
 );
 
 const SendMessageForm = () => {
+  const navigate = useNavigate(); // ADD THIS LINE
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -105,10 +107,26 @@ const SendMessageForm = () => {
     }));
   };
 
+  // REPLACE THIS ENTIRE FUNCTION:
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Add your form submission logic here
+    
+    // Navigate to message confirmation page with form data
+    navigate('/contact/MessageConfirmation', {
+      state: { 
+        messageData: formData 
+      }
+    });
+    
+    // Optional: Reset form after navigation
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    });
   };
 
   const subjects = [

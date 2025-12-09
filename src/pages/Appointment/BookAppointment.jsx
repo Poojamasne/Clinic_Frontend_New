@@ -18,7 +18,7 @@ import { useNavigate } from 'react-router-dom';
 // Import SVG icons from assets
 import UserIcon from '../../assets/Appointment/fullName.svg';
 import EmailIcon from '../../assets/Appointment/email.svg';
-import PhoneIcon from '../../assets/Appointment/phone.svg';
+import PhoneIcon from '../../assets/Appointment/Phone-number.svg';
 import TreatmentIcon from '../../assets/Appointment/treatment.svg';
 import CalendarIcon from '../../assets/Appointment/calendar.svg';
 import TimeIcon from '../../assets/Appointment/time.svg';

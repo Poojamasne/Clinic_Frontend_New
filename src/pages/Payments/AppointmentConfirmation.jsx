@@ -4,12 +4,11 @@ import {
   Typography,
   Button,
 } from '@mui/material';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, } from 'react-router-dom';
 import ConfirmationIcon from '../../assets/Appointment/confirmation.svg'; 
 
 const AppointmentConfirmation = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   
   // Get data from payment page
   const { appointmentData = {} } = location.state || {};
@@ -29,14 +28,9 @@ const AppointmentConfirmation = () => {
     ...appointmentData
   };
 
-  const handleBackToHome = () => {
-    navigate('/');
-  };
 
-  const handleViewAppointment = () => {
-    navigate('/appointments');
-  };
 
+  
   return (
     <Box sx={{ 
       backgroundColor: '#ffffff', 
