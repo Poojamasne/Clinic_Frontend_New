@@ -19,7 +19,6 @@ import MigraineTreatment from "../pages/Treatments/MigraineTreatment/MigraineTre
 import ENTTreatments from "../pages/Treatments/ENTTreatments/ENTTreatments";
 import JointTreatments from "../pages/Treatments/JointTreatments/JointTreatments";
 import ChildTreatments from "../pages/Treatments/ChildTreatments/ChildTreatments";
->>>>>>> Stashed changes
 import PaymentSuccess from "../pages/Payments/PaymentSuccess";
 import PaymentFail from "../pages/Payments/PaymentFail";
 import PaymentPage from "../pages/Payments/PaymentPage";
@@ -80,7 +79,6 @@ export default function AppRouter() {
           <Route path="/payment/success" element={<PaymentSuccess />} />
           <Route path="/payment/fail" element={<PaymentFail />} />
           <Route path="/payment/PaymentPage" element={<PaymentPage />} />
-
 
           <Route
             path="/payment/appointment-confirmation"
