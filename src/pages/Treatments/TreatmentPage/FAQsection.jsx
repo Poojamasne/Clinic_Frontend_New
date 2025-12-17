@@ -37,6 +37,7 @@ const FAQSection = ({ title, subtitle, faqs }) => {
   return (
     <Box
       sx={{
+        backgroundColor: "#ffffff",
         width: "100%",
         py: { xs: 6, md: 10 },
       }}
