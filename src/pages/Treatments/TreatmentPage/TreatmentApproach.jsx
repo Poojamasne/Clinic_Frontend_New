@@ -95,9 +95,10 @@ const TreatmentApproach = ({ symptoms, treatmentApproach }) => {
                   ml: { xs: "12px", sm: "18px", md: "22px" },
                 }}
               >
-                {finalSymptoms.expectations
-                  ? "Treatment Benefits"
-                  : "Common Symptoms"}
+                {finalSymptoms.cardTitle ||
+                  (finalSymptoms.expectations
+                    ? "Treatment Benefits"
+                    : "Common Symptoms")}
               </Typography>
 
               <Box

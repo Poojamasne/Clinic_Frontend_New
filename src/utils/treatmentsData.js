@@ -23,6 +23,7 @@ export const TREATMENTS_DATA = [
     },
     symptoms: {
       title: "When to Seek Treatment",
+      cardTitle: "Common Symptoms:",
       description:
         "If you're experiencing any of these symptoms, it's important to consult with our spine specialists. Early homeopathic treatment can prevent progression and support long-term recovery.",
       symptoms: [
@@ -128,8 +129,12 @@ export const TREATMENTS_DATA = [
     },
     symptoms: {
       title: "When to See a Gastroenterology Homeopathic Consultant",
+      cardTitle:
+        "Schedule a consultation if you experience any of these symptoms.",
+
       description:
         "Don’t ignore digestive discomfort. Early evaluation can help reduce complications and support better daily well-being. Schedule a consultation if you experience any of these symptoms.",
+
       symptoms: [
         "Chronic abdominal pain",
         "Persistent heartburn or acid reflux",
@@ -234,6 +239,7 @@ export const TREATMENTS_DATA = [
     },
     benefits: {
       title: "Treatment Benefits",
+      cardTitle: "Treatment Benefits",
       description:
         "Our cosmetic treatments offer numerous benefits beyond aesthetic improvement.",
       expectations: [
@@ -319,6 +325,7 @@ export const TREATMENTS_DATA = [
     },
     symptoms: {
       title: "When to See a Nephrologist",
+      cardTitle: "Warning Signs ",
       description:
         "Early detection of kidney issues is vital. Consult our homeopathic nephrology specialists if you notice these warning signs or have risk factors like diabetes or high blood pressure.",
       symptoms: [
@@ -418,6 +425,7 @@ export const TREATMENTS_DATA = [
     },
     symptoms: {
       title: "When to See a Gynecologist",
+      cardTitle: "Common Signs You Should Not Ignore",
       description:
         "You should consult a gynecologist if you notice unusual symptoms or changes in your reproductive health. Early evaluation helps you address concerns and improve long-term wellness.",
       symptoms: [
@@ -508,6 +516,7 @@ export const TREATMENTS_DATA = [
     },
     symptoms: {
       title: "When to See a Specialist for Migraine",
+      cardTitle: "Warning Signs You Should Not Ignore",
       description:
         "Persistent or recurring migraine symptoms should be evaluated early to prevent chronic headaches and improve long-term migraine management.",
       symptoms: [
@@ -527,13 +536,13 @@ export const TREATMENTS_DATA = [
         step: 1,
         title: "Comprehensive Diagnosis",
         description:
-          "Detailed assessment including medical history, lifestyle triggers, neurological evaluation, and imaging (if required) to identify migraine root causes.",
+          "Detailed assessment including medical history, lifestyle triggers, neurological evaluation, and imaging (if required) to identify migraine root causes for effective homeopathic treatment.",
       },
       {
         step: 2,
         title: "Personalized Treatment Plan",
         description:
-          "Customized plan based on migraine type, severity, triggers, and patient lifestyle using targeted homeopathic and supportive therapies.",
+          "Customized plan based on migraine type, severity, triggers, and patient lifestyle using targeted homeopathic remedies for long-term relief.",
       },
       {
         step: 3,
@@ -558,7 +567,7 @@ export const TREATMENTS_DATA = [
       {
         question: "What triggers migraines?",
         answer:
-          "Common migraine triggers include stress, lack of sleep, hormonal changes, dehydration, certain foods, bright lights, and strong smells. Identifying personal triggers is an important part of migraine management.",
+          "Common migraine triggers include stress, lack of sleep, hormonal changes, dehydration, certain foods, bright lights, and strong smells. Identifying personal triggers is an important part of migraine management and long-term headache control.",
       },
       {
         question: "Can migraine be cured with homeopathy?",
@@ -568,12 +577,12 @@ export const TREATMENTS_DATA = [
       {
         question: "Is migraine 100% curable?",
         answer:
-          "No, migraine is a chronic neurological condition and is not considered 100% curable. However, with proper treatment and trigger control, many patients achieve good symptom control.",
+          "Migraine cannot be permanently cured, but homeopathic migraine treatment may help reduce symptom intensity, attack frequency, and recurrence over time. It is used as a supportive, long-term approach along with lifestyle changes.",
       },
       {
         question: "What are the symptoms of a severe migraine?",
         answer:
-          "Severe migraine symptoms include intense one-sided headache, nausea or vomiting, sensitivity to light and sound, visual disturbances, dizziness, and difficulty concentrating, often requiring medical attention.",
+          "Severe migraine symptoms include intense one-sided headache, nausea or vomiting, sensitivity to light and sound, visual disturbances, dizziness, and difficulty concentrating- often requiring medical attention for chronic migraine relief.",
       },
     ],
     cta: {
@@ -610,6 +619,7 @@ export const TREATMENTS_DATA = [
     },
     symptoms: {
       title: "When to Visit an ENT Specialist",
+      cardTitle: "Common Warning Signs",
       description:
         "Recognize early ENT symptoms to prevent chronic ear, nose, and throat issues and seek timely evaluation.",
       symptoms: [
@@ -654,28 +664,28 @@ export const TREATMENTS_DATA = [
       {
         question: "Which medicine is best for ENT problems?",
         answer:
-          "There is no single best medicine for ENT problems. Treatment depends on symptoms, age, severity, and triggers such as sinus infections, allergies, or throat issues. Remedies are selected individually based on proper evaluation to support overall ENT health.",
+          " There is no single “best” medicine for ENT problems. Treatment depends on symptoms, age, severity, and triggers such as sinus infection, allergies, or throat issues. In homeopathy, remedies are selected individually to support symptom relief and overall ENT health, alongside proper medical evaluation.",
       },
       {
         question: "Do I need surgery for tonsillitis?",
         answer:
-          "Surgery is considered only when tonsillitis becomes chronic or severely affects breathing or swallowing. Many cases of recurrent tonsillitis improve with medical management, monitoring, and supportive treatment without surgery.",
+          "Surgery is considered only when tonsillitis becomes chronic or severely affects breathing or swallowing. Many cases of recurrent tonsillitis improve with medical management, monitoring, and supportive homeopathic ENT treatment without surgery.",
       },
       {
         question: "Is homeopathy safe for ENT problems in children?",
         answer:
-          "Homeopathy is generally considered gentle and safe for children when prescribed by a qualified doctor. It may help support comfort in mild ENT issues, but persistent symptoms should always be evaluated by an ENT or pediatric specialist.",
+          "Homeopathy is generally considered gentle and safe for children when prescribed by a qualified doctor. It may help support symptom comfort in mild ENT problems like ear pain or nasal congestion, but persistent symptoms should always be evaluated by an ENT or pediatric specialist.",
       },
       {
         question:
           "Can homeopathy help with a blocked nose and nasal congestion?",
         answer:
-          "Homeopathy may help ease nasal congestion by addressing triggers such as allergies, sinus congestion, or recurrent colds. It is often used as supportive care along with medical guidance for underlying ENT conditions.",
+          "Homeopathy may help ease a blocked nose and nasal congestion by addressing triggers such as allergies, sinus congestion, or recurrent colds. It is often used as supportive care along with trigger avoidance and medical guidance for underlying ENT conditions.",
       },
       {
         question: "Can sinus problems come back after treatment?",
         answer:
-          "With proper treatment, lifestyle care, and trigger management, many patients experience long-term relief from sinus problems. Regular follow-ups and allergy control help reduce recurrence and maintain better sinus health over time.",
+          "With proper treatment, lifestyle care, and trigger management, many patients experience long-term relief from sinus problems. Regular follow-ups, allergy control, and supportive homeopathic care help reduce recurrence and maintain better sinus health over time.",
       },
     ],
     cta: {
@@ -711,6 +721,7 @@ export const TREATMENTS_DATA = [
     },
     symptoms: {
       title: "When to Visit an Orthopedic Specialist",
+      cardTitle: "Warning Signs You Should Not Ignore",
       description:
         "Orthopedic symptoms should not be ignored. Early evaluation helps prevent long-term joint damage, chronic inflammation, or loss of mobility.",
       symptoms: [
@@ -815,6 +826,7 @@ export const TREATMENTS_DATA = [
     },
     when_to_consult: {
       title: "When to Consult a Pediatric Specialist",
+      cardTitle: "Warning Signs You Should Not Ignore",
       description:
         "Visit a pediatrician if your child shows recurring symptoms, delayed milestones, or unusual behavior patterns.",
       symptoms: [
