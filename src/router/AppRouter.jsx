@@ -6,10 +6,6 @@ import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import BookAppointment from "../pages/Appointment/BookAppointment";
 import MessageConfirmation from "../pages/Contact/MessageConfirmation";
-import Spine from "../pages/Treatments/Spine";
-import GIT from "../pages/Treatments/GIT";
-import Cosmetology from "../pages/Treatments/Cosmetology";
-
 import Spine from "../pages/Treatments/Spine/Spine";
 import GIT from "../pages/Treatments/GIT/GIT";
 import Cosmetology from "../pages/Treatments/Cosmetology/Cosmetology";

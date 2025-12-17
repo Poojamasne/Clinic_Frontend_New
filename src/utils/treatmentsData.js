@@ -7,11 +7,11 @@ export const TREATMENTS_DATA = [
     title: "Advanced Spine Treatment Solutions",
     image: "/src/assets/treatments/SpineTreatment.jpg",
     description:
-      "Expert care for all spine-related conditions using state-of-the-art technology and proven treatment methods. Our specialized team is dedicated to helping you achieve a pain-free, active lifestyle.",
+      "Expert homeopathic care for spine-related conditions using gentle, effective, and natural treatment methods. Our specialized team is dedicated to helping you achieve a pain-free, active lifestyle.",
     services: {
       title: "Our Spine Treatment Services",
       subtitle:
-        "Comprehensive solutions tailored to your specific spine condition",
+        "Homeopathic care focused on your spine pain and long-term recovery needs",
       services: [
         "Lumbar spondylosis",
         "Cervical spondylosis",
@@ -24,13 +24,12 @@ export const TREATMENTS_DATA = [
     symptoms: {
       title: "When to Seek Treatment",
       description:
-        "If you're experiencing any of these symptoms, it's important to consult with our spine specialists. Early diagnosis and treatment can prevent condition progression and improve outcomes.",
+        "If you're experiencing any of these symptoms, it's important to consult with our spine specialists. Early homeopathic treatment can prevent progression and support long-term recovery.",
       symptoms: [
         "Persistent lower back pain",
         "Radiating pain down the legs",
         "Numbness or tingling in extremities",
         "Difficulty walking or standing",
-        "Loss of bladder or bowel control",
         "Muscle weakness",
         "Limited range of motion",
         "Pain that worsens with activity",
@@ -41,49 +40,59 @@ export const TREATMENTS_DATA = [
         step: 1,
         title: "Comprehensive Evaluation",
         description:
-          "Thorough assessment including medical history, physical examination, and advanced imaging.",
+          "A detailed assessment of symptoms, lifestyle patterns, and medical history to understand the root cause of your spine condition.",
       },
       {
         step: 2,
         title: "Personalized Treatment Plan",
         description:
-          "Customized care plan based on your specific condition, lifestyle, and health goals.",
+          "A customized homeopathic care plan based on your specific symptoms, routine, and health goals.",
       },
       {
         step: 3,
-        title: "Advanced Treatment",
+        title: "Advanced Homeopathic Care",
         description:
-          "Implementation of cutting-edge therapies, from conservative care to minimally invasive surgery.",
+          "Natural, non-invasive remedies designed to reduce pain, ease nerve pressure, and support long-term spine healing.",
       },
       {
         step: 4,
         title: "Recovery & Rehabilitation",
         description:
-          "Comprehensive post-treatment care and physical therapy to ensure optimal recovery.",
+          "Guidance on posture, daily habits, and simple exercises to ensure sustained recovery and prevent recurrence.",
       },
     ],
     faqs: [
       {
-        question: "What Causes Spine Problems?",
+        question: "What causes spine problems?",
         answer:
-          "Spine problems can result from various factors including age-related degeneration, injuries, poor posture, obesity, genetics, and repetitive stress. Conditions like herniated discs, spinal stenosis, and arthritis are common causes of spine-related pain.",
+          "Poor posture, long sitting hours, muscle strain, and age-related spine changes are common causes of spine problems and chronic back pain. Homeopathic spine treatment helps address these issues naturally by targeting root causes.",
       },
       {
-        question: "How long does recovery take after spine surgery?",
+        question: "How long does recovery take?",
         answer:
-          "Recovery time varies depending on the type of surgery. Minimally invasive procedures typically require 2–6 weeks for initial recovery, while more complex surgeries may take 3–6 months. Our team provides personalized rehabilitation plans to optimize your recovery.",
+          "Recovery varies by condition, but many patients experience gradual improvement with consistent homeopathic treatment for spine pain and proper lifestyle guidance.",
       },
       {
-        question: "Are non-surgical treatments available?",
+        question: "How does homeopathy help with spine problems?",
         answer:
-          "Yes, we always explore conservative treatments first, including physical therapy, medication management, spinal injections, and lifestyle modifications. Surgery is recommended only when non-surgical options have been exhausted or in cases requiring immediate intervention.",
+          "Homeopathy for spine issues works by reducing inflammation, easing nerve compression, improving mobility, and strengthening the body's natural healing response for long-term spine pain relief.",
+      },
+      {
+        question: "Does homeopathic spine treatment have side effects?",
+        answer:
+          "No. Homeopathic medicine for spine pain is gentle, safe, and suitable for long-term use without causing dependency or side effects—making it a preferred option for non-surgical spine care.",
       },
       {
         question: "Will I need to stay in the hospital?",
         answer:
-          "Hospital stay depends on the procedure. Many minimally invasive surgeries are outpatient or require only 1–2 days in the hospital. More complex procedures may require a longer stay.",
+          "No. Homeopathic spine treatment is completely non-invasive and does not require hospitalization.",
       },
     ],
+    cta: {
+      title: "Ready to Start Your Recovery Journey?",
+      subtitle: "Schedule a consultation with our spine specialists today",
+      buttonText: "Book Your Appointment Today",
+    },
   },
   {
     key: "git",
@@ -172,6 +181,11 @@ export const TREATMENTS_DATA = [
           "Yes, most digestive conditions can be effectively managed with medications, diet changes, and lifestyle modifications.",
       },
     ],
+    cta: {
+      title: "Take Control of Your Digestive Health",
+      subtitle: "Schedule a consultation with our GI specialists today",
+      buttonText: "Book Your Appointment Today",
+    },
   },
   {
     key: "cosmetology",
@@ -254,6 +268,12 @@ export const TREATMENTS_DATA = [
           "Results vary based on the procedure, skin type, and aftercare but typically last from several months to years.",
       },
     ],
+    cta: {
+      title: "Ready to Transform Your Appearance?",
+      subtitle:
+        "Book an appointment today and take the first step towards looking and feeling your absolute best",
+      buttonText: "Schedule Your Cosmetology Consultation",
+    },
   },
   {
     key: "kidney",
@@ -334,6 +354,11 @@ export const TREATMENTS_DATA = [
           "Yes, early detection, proper hydration, and managing diabetes or hypertension can help prevent kidney disease.",
       },
     ],
+    cta: {
+      title: "Protect Your Kidney Health",
+      subtitle: "Schedule a consultation with our nephrology specialists today",
+      buttonText: "Book Your Appointment Today",
+    },
   },
   {
     key: "gynecologist",
@@ -410,6 +435,11 @@ export const TREATMENTS_DATA = [
           "Yes, most gynecological conditions are highly treatable with early diagnosis and proper medical care.",
       },
     ],
+    cta: {
+      title: "Your Health, Our Priority",
+      subtitle: "Schedule a consultation with our women's health specialists",
+      buttonText: "Schedule Your Gynecology Consultation",
+    },
   },
   {
     key: "migraine",
@@ -475,6 +505,11 @@ export const TREATMENTS_DATA = [
           "While migraines may not always be cured permanently, they can be effectively managed with medications and lifestyle changes.",
       },
     ],
+    cta: {
+      title: "Find Relief from Chronic Migraines",
+      subtitle: "Schedule a consultation with our headache specialists today",
+      buttonText: "Schedule Your Migraine Consultation",
+    },
   },
   {
     key: "ent",
@@ -551,6 +586,11 @@ export const TREATMENTS_DATA = [
           "Yes, many ENT conditions can be fully cured with proper medical or minor surgical treatments.",
       },
     ],
+    cta: {
+      title: "Breathe Easy, Hear Clearly, Live Better",
+      subtitle: "Schedule a consultation with our ENT specialists today",
+      buttonText: "Schedule Your ENT Consultation",
+    },
   },
   {
     key: "joint",
@@ -629,6 +669,12 @@ export const TREATMENTS_DATA = [
           "Yes, physiotherapy, medications, injections, and lifestyle modification can manage most joint conditions.",
       },
     ],
+    cta: {
+      title: "Ready to Regain Your Mobility?",
+      subtitle:
+        "Book an appointment today and take the first step towards pain-free movement and improved joint health",
+      buttonText: "Schedule Your Joint Consultation",
+    },
   },
   {
     key: "child",
@@ -708,6 +754,12 @@ export const TREATMENTS_DATA = [
           "Yes, most childhood illnesses can be easily treated if diagnosed early.",
       },
     ],
+    cta: {
+      title: "Ready to Ensure Your Child's Health?",
+      subtitle:
+        "Book an appointment today and take the first step towards comprehensive pediatric care for your child",
+      buttonText: "Schedule Your Child's Consultation",
+    },
   },
 ];
 
