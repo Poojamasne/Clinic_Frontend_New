@@ -723,7 +723,7 @@ export const TREATMENTS_DATA = [
       title: "When to Visit an Orthopedic Specialist",
       cardTitle: "Warning Signs You Should Not Ignore",
       description:
-        "Orthopedic symptoms should not be ignored. Early evaluation helps prevent long-term joint damage, chronic inflammation, or loss of mobility.",
+        "Orthopedic symptoms should not be ignored. Early evaluation helps prevent long-term joint damage, chronic inflammation, or mobility loss.",
       symptoms: [
         "Persistent joint pain or swelling",
         "Morning stiffness lasting more than 30 minutes",
@@ -767,7 +767,7 @@ export const TREATMENTS_DATA = [
       {
         question: "What causes joint pain?",
         answer:
-          "Joint pain commonly occurs due to inflammation, arthritis, injury, or overuse. A proper evaluation helps identify the exact cause and guide the right treatment approach.",
+          "Joint pain commonly occurs due to inflammation, arthritis, injury, or overuse. A proper evaluation helps identify the exact cause and the right treatment.",
       },
       {
         question: "When should I see a doctor for joint pain?",
@@ -777,17 +777,17 @@ export const TREATMENTS_DATA = [
       {
         question: "How long does recovery take with joint treatment?",
         answer:
-          "Recovery depends on the condition and consistency of care. Many patients notice gradual improvement over weeks with appropriate treatment, lifestyle changes, and guided exercises.",
+          "Recovery depends on the condition and consistency of care. Many patients see gradual improvement over weeks with the right treatment, lifestyle changes, and guided exercises.",
       },
       {
         question: "Can exercise help joint pain?",
         answer:
-          "Yes. Gentle and guided exercises can reduce stiffness and strengthen joints. The ideal routine depends on the condition and should be recommended by a specialist.",
+          "Gentle exercises often reduce stiffness and support joint strength. The right routine depends on the condition and should be guided by a specialist.",
       },
       {
         question: "Are homeopathic treatments effective for joint problems?",
         answer:
-          "Homeopathy may help ease joint discomfort, inflammation, and stiffness by supporting overall well-being. It works best when combined with proper medical guidance and movement therapy.",
+          "Homeopathy may help ease joint discomfort, inflammation, and stiffness by supporting overall well-being. It works best when used alongside proper medical advice and movement therapy",
       },
     ],
     cta: {
@@ -876,7 +876,7 @@ export const TREATMENTS_DATA = [
       {
         question: "Is homeopathic treatment safe for infants and toddlers?",
         answer:
-          "When given under professional guidance, homeopathic medicines are safe for infants and toddlers. Remedies and dosage are selected carefully based on age, symptoms, and overall health.",
+          "When given under professional guidance, homeopathic medicines are safe for infants and toddlers. Dosage and remedies are selected carefully based on age, symptoms, and overall health.",
       },
       {
         question:
@@ -887,7 +887,7 @@ export const TREATMENTS_DATA = [
       {
         question: "Can homeopathy help improve a child’s immunity?",
         answer:
-          "Homeopathy may support a child’s overall immunity and well-being when used alongside proper nutrition, sleep, hygiene, and regular pediatric care.",
+          "Homeopathy may support a child’s overall immunity and well-being when used as part of a healthy routine. It works best alongside proper nutrition, sleep, hygiene, and regular pediatric care.",
       },
       {
         question: "When should I bring my child to a doctor?",
