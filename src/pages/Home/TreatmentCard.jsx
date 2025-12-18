@@ -69,11 +69,11 @@ export default function TreatmentCard({ title, description, image }) {
           variant="h5"
           sx={{
             fontFamily: "Poppins, sans-serif",
-            fontWeight: 500,
+            fontWeight: 600,
             fontSize: {
-              xs: "1.2rem",
-              sm: "1.3rem",
-              md: "1.4rem",
+              xs: "14px",
+              sm: "17px",
+              md: "17px",
             },
             color: "#1a1a1a",
             mb: -3,
@@ -86,7 +86,7 @@ export default function TreatmentCard({ title, description, image }) {
           sx={{
             fontFamily: "Poppins, sans-serif",
             color: "#666",
-            fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+            fontSize: { xs: "14px", sm: "16px", md: "16px" },
             lineHeight: 1.6,
             mb: 1,
             flexGrow: 1,
@@ -95,6 +95,7 @@ export default function TreatmentCard({ title, description, image }) {
             WebkitBoxOrient: "vertical",
             overflow: "hidden",
             textOverflow: "ellipsis",
+            fontWeight: 300,
           }}
         >
           {description}

@@ -57,7 +57,7 @@ export default function HeroSection() {
                 fontFamily: "Poppins, sans-serif",
                 mb: 3,
                 color: "#666",
-                fontSize: { xs: "0.95rem", sm: "1rem", md: "1.1rem" },
+                fontSize: { xs: "14px", sm: "16px", md: "18px" },
                 lineHeight: 1.7,
               }}
             >
@@ -79,7 +79,7 @@ export default function HeroSection() {
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    mb: 1.5,
+                    mb: { xs: 2, sm: 2.5, md: 3 },
                   }}
                 >
                   <Box
@@ -96,8 +96,10 @@ export default function HeroSection() {
                   <Typography
                     sx={{
                       fontFamily: "Poppins, sans-serif",
-                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-                      color: "#333",
+                      fontWeight: 500,
+                      fontSize: { xs: "14px", sm: "17px", md: "17px" },
+                      lineHeight: "145%",
+                      color: "#155DFC",
                     }}
                   >
                     {feature}
@@ -131,12 +133,16 @@ export default function HeroSection() {
                   />
                 }
                 sx={{
+                  borderRadius: "8px",
+
                   fontFamily: "Poppins, sans-serif",
                   px: { xs: 3, sm: 4 },
                   py: 1.5,
-                  fontSize: { xs: "0.9rem", sm: "1rem" },
+                  textTransform: "none",
+                  fontWeight: 500,
+                  fontSize: { xs: "15px", sm: "15px" },
                   backgroundColor: "#155DFC",
-                  minWidth: { xs: "100%", sm: "200px" },
+                  minWidth: { xs: "100%", sm: "230px" },
                   "&:hover": {
                     backgroundColor: "#155DFC",
                   },
@@ -149,13 +155,16 @@ export default function HeroSection() {
                 variant="outlined"
                 size="large"
                 sx={{
+                  borderRadius: "8px",
                   fontFamily: "Poppins, sans-serif",
                   px: { xs: 3, sm: 4 },
                   py: 1.5,
                   fontSize: { xs: "0.9rem", sm: "1rem" },
                   borderColor: "#155DFC",
+                  textTransform: "none",
+
                   color: "#155DFC",
-                  minWidth: { xs: "100%", sm: "200px" },
+                  minWidth: { xs: "100%", sm: "230px" },
                   "&:hover": {
                     borderColor: "#155DFC",
                     backgroundColor: "rgba(21, 93, 252, 0.04)",

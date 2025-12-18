@@ -85,10 +85,10 @@ export default function SpecializedTreatmentsSection() {
               fontFamily: "Poppins, sans-serif",
               fontWeight: 600,
               fontSize: {
-                xs: "1.8rem",
-                sm: "2.2rem",
-                md: "2.5rem",
-                lg: "3rem",
+                xs: "20px",
+                sm: "24px",
+                md: "24px",
+                lg: "24px",
               },
               color: "#1a1a1a",
               mb: 2,
@@ -99,7 +99,8 @@ export default function SpecializedTreatmentsSection() {
           <Typography
             sx={{
               fontFamily: "Poppins, sans-serif",
-              fontSize: { xs: "0.95rem", sm: "1rem", md: "1.1rem" },
+              fontSize: { xs: "14px", sm: "16px", md: "16px" },
+              fontWeight: 300,
               color: "#666",
               maxWidth: "700px",
               mx: "auto",
