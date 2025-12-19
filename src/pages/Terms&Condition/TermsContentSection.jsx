@@ -4,13 +4,13 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 export default function TermsContentSection() {
   const terms = [
     "Please review and acknowledge the terms below.",
-    "By booking or using our services, you agree to our other policies.",
-    "Consultation timing may depend on doctor availability and patient flow.",
+    "By booking or using our services, you agree to our clinic policies.",
+    "Consultation timing may vary depending on doctor availability and patient flow.",
     "Treatment plans are personalized and results may vary from person to person.",
     "Fees and service charges may change without prior notice.",
-    "Your appointment is not confirmed until it has been verified manually by our staff.",
+    "If you choose Pay at Clinic, your appointment is not reserved online and must be confirmed manually at the reception.",
     "All medical records and personal information are kept confidential and used only for treatment purposes.",
-    "For any cancellations, please contact our clinic reception at least 24 hours in advance.",
+    "For any clarification, please contact our clinic reception.",
   ];
 
   return (
@@ -19,7 +19,7 @@ export default function TermsContentSection() {
         width: "100%",
         py: { xs: 2, sm: 3, md: 4, lg: 6, xl: 8 },
         px: { xs: 1, sm: 2, md: 3 },
-        backgroundColor: "#ffffff",
+        backgroundColor: "#F2F2F2",
         display: "flex",
         alignItems: "center",
         minHeight: "100vh",
@@ -39,15 +39,15 @@ export default function TermsContentSection() {
             height: { xs: "auto", sm: "auto", md: "auto", lg: "auto" },
             display: "flex",
             flexDirection: "column",
-            gap: { xs: 2.5, sm: 3, md: 4, lg: "35px" },
+            gap: { xs: 2.5, sm: "32px", md: 4, lg: "35px" },
             opacity: 1,
             pt: { xs: 3, sm: 4, md: 5, lg: "60px" },
             pr: { xs: 2, sm: 3, md: 4, lg: "50px" },
-            pb: { xs: 3, sm: 4, md: 5, lg: "60px" },
+            pb: { xs: 2, sm: "80px", md: 4, lg: "50px" },
             pl: { xs: 2, sm: 3, md: 4, lg: "50px" },
             borderRadius: { xs: "10px", sm: "12px", md: "14px" },
             border: "1px solid #E0E0E0",
-            boxShadow: {
+            boxShadow: { 
               xs: "0px 2px 8px rgba(0, 0, 0, 0.04)",
               sm: "0px 3px 12px rgba(0, 0, 0, 0.05)",
               md: "0px 4px 20px rgba(0, 0, 0, 0.05)",
@@ -73,8 +73,8 @@ export default function TermsContentSection() {
                   alignItems: "flex-start",
                   p: 0,
                   display: "flex",
-                  flexDirection: { xs: "column", sm: "row" },
-                  gap: { xs: 1, sm: 0 },
+                  flexDirection: "row",
+
                 }}
               >
                 <ListItemIcon 
@@ -142,7 +142,7 @@ export default function TermsContentSection() {
               pb: { xs: 2, sm: 3, md: "21px" },
               pl: { xs: 2, sm: 3, md: "22px" },
               borderRadius: { xs: "6px", sm: "7px" },
-              border: "1px solid #D1E3FF",
+              border: "1px solid #3B97FF",
               backgroundColor: "#F2F8FF",
               mt: { xs: 2, sm: 3 },
             }}
@@ -150,12 +150,12 @@ export default function TermsContentSection() {
             <Typography
               sx={{
                 fontFamily: "Poppins, sans-serif",
-                fontWeight: { xs: 500, sm: 400 },
+                fontWeight: { xs: 500, sm: 600 },
                 fontSize: { 
                   xs: "17px", 
-                  sm: "19px", 
-                  md: "20px",
-                  lg: "22px" 
+                  sm: "16px", 
+                  md: "16px",
+                  lg: "16px" 
                 },
                 color: "#3B3C3D",
                 textAlign: { xs: "center", sm: "left" },
@@ -185,8 +185,8 @@ export default function TermsContentSection() {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: { xs: 500, sm: 400, md: 300 },
-                    fontSize: { xs: "13px", sm: "13.5px", md: "14px" },
-                    color: "#333333",
+                    fontSize: { xs: "13px", sm: "13.5px", md: "16px" },
+                    color: "#2C2C2D",
                     whiteSpace: { xs: "normal", sm: "nowrap" },
                     minWidth: { xs: "auto", sm: "60px" },
                     width: { xs: "100%", sm: "auto" },
@@ -199,8 +199,8 @@ export default function TermsContentSection() {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: { xs: 400, sm: 300 },
-                    fontSize: { xs: "12px", sm: "13px", md: "14px" },
-                    color: "#555555",
+                    fontSize: { xs: "12px", sm: "13px", md: "16px" },
+                    color: "#2C2C2D",
                     lineHeight: 1.5,
                     flex: 1,
                     wordBreak: "break-word",
@@ -224,8 +224,8 @@ export default function TermsContentSection() {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: { xs: 500, sm: 400, md: 300 },
-                    fontSize: { xs: "13px", sm: "13.5px", md: "14px" },
-                    color: "#333333",
+                    fontSize: { xs: "13px", sm: "13.5px", md: "16px" },
+                    color: "#2C2C2D",
                     whiteSpace: { xs: "normal", sm: "nowrap" },
                     minWidth: { xs: "auto", sm: "60px" },
                     width: { xs: "100%", sm: "auto" },
@@ -238,14 +238,14 @@ export default function TermsContentSection() {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: { xs: 400, sm: 300 },
-                    fontSize: { xs: "12px", sm: "13px", md: "14px" },
-                    color: "#555555",
+                    fontSize: { xs: "12px", sm: "13px", md: "16px" },
+                    color: "#2C2C2D",
                     wordBreak: "break-all",
                     overflowWrap: "break-word",
                     flex: 1,
                   }}
                 >
-                  drdarshan.nirmalhealthcare@gmail.com
+                  drdardasnirmalhealthcare@gmail.com
                 </Typography>
               </Box>
 
@@ -262,8 +262,8 @@ export default function TermsContentSection() {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: { xs: 500, sm: 400, md: 300 },
-                    fontSize: { xs: "13px", sm: "13.5px", md: "14px" },
-                    color: "#333333",
+                    fontSize: { xs: "13px", sm: "13.5px", md: "16px" },
+                    color: "#2C2C2D",
                     whiteSpace: { xs: "normal", sm: "nowrap" },
                     minWidth: { xs: "auto", sm: "60px" },
                     width: { xs: "100%", sm: "auto" },
@@ -276,8 +276,8 @@ export default function TermsContentSection() {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: { xs: 400, sm: 300 },
-                    fontSize: { xs: "12px", sm: "13px", md: "14px" },
-                    color: "#555555",
+                    fontSize: { xs: "12px", sm: "13px", md: "16px" },
+                    color: "#2C2C2D",
                   }}
                 >
                   +91 9822141851

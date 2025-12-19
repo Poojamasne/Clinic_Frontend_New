@@ -119,7 +119,7 @@ export default function HeroSection() {
               <Button
                 variant="contained"
                 size="large"
-                onClick={() => navigate("/book-appointment")}
+                onClick={() => navigate("/appointment")}
                 startIcon={
                   <Box
                     component="img"
@@ -154,6 +154,7 @@ export default function HeroSection() {
               <Button
                 variant="outlined"
                 size="large"
+                onClick={() => navigate("/contact")}
                 sx={{
                   borderRadius: "8px",
                   fontFamily: "Poppins, sans-serif",

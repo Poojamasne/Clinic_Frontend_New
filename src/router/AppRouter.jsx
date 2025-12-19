@@ -22,42 +22,39 @@ import AppointmentConfirmation from "../pages/Payments/AppointmentConfirmation";
 import Terms from "../pages/Terms&Condition/Terms";
 import PrivacyPolicy from "../pages/Privacy&Policy/Privacy";
 
-// ScrollToTop Component - Add this function
+
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Scroll to top on every route change
+   
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "instant", // or "auto" - instant has no animation
+      behavior: "instant", 
     });
   }, [pathname]);
 
-  return null; // This component doesn't render anything
+  return null; 
 }
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
-      {/* Add ScrollToTop component here */}
+      
       <ScrollToTop />
       <Routes>
         <Route element={<PageLayout />}>
-          {/* Main routes inside layout */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/appointment" element={<BookAppointment />} />
 
-          {/* Treatments Nested Routes */}
+          
           <Route path="/treatments">
-            {/* Existing routes for backward compatibility */}
             <Route path="spine" element={<Spine />} />
             <Route path="git" element={<GIT />} />
             <Route path="cosmetology" element={<Cosmetology />} />
-            {/* Routes matching Navbar path format */}
             <Route path="spine-treatments" element={<Spine />} />
             <Route path="git-treatments" element={<GIT />} />
             <Route path="kidney-treatment" element={<KidneyTreatment />} />

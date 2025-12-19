@@ -7,7 +7,7 @@ export default function TermsHeroSection() {
     <Box
       sx={{
         width: "100%",
-        backgroundColor: "#f0f4f8",
+        backgroundColor: "#F4F9FF",
         
         display: "flex",
         alignItems: "center",
