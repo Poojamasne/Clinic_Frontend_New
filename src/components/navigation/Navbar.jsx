@@ -110,7 +110,7 @@ export default function Navbar() {
           sx={{
             py: { xs: 1, sm: 1.5 },
             px: 0,
-            height: { xs: "75px", sm: "75px", md: "75px" },
+            height: { xs: "95px", sm: "95px", md: "75px" },
           }}
         >
           <Container
@@ -119,8 +119,20 @@ export default function Navbar() {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              width: { xs: "100%", sm: "100%", md: "100%", lg: "100%", xl: "1440px" },
-              maxWidth: { xs: "100%", sm: "100%", md: "100%", lg: "100%", xl: "1440px" },
+              width: {
+                xs: "100%",
+                sm: "100%",
+                md: "100%",
+                lg: "100%",
+                xl: "1440px",
+              },
+              maxWidth: {
+                xs: "100%",
+                sm: "100%",
+                md: "100%",
+                lg: "100%",
+                xl: "1440px",
+              },
               height: { xs: "auto", sm: "auto", md: "82px" },
               px: { xs: 2, sm: 3, md: 4, lg: 4, xl: 0 },
               mx: "auto",
@@ -133,6 +145,7 @@ export default function Navbar() {
               to="/"
               sx={{
                 display: "flex",
+                ml: { xs: 0, sm: 0, md: "50px" },
                 flexDirection: "column",
                 alignItems: "center",
                 width: { xs: "auto", sm: "auto", md: "153px" },
@@ -149,9 +162,9 @@ export default function Navbar() {
                 src={logo}
                 sx={{
                   width: { xs: 40, sm: 45, md: "47px" },
-                  height: "32px",
+                  height: { xs: "auto", sm: "auto", md: "32px" },
                   mb: { xs: "5px", md: "5px", lg: "5px" },
-                  mt: { xs: "-14px", md: "-14px", lg: "-14px" },
+                  mt: { xs: 0, md: "-14px", lg: "-14px" },
                 }}
               />
 
@@ -160,8 +173,9 @@ export default function Navbar() {
                 sx={{
                   fontWeight: 500,
                   color: "#0057B7",
-                  fontSize: { xs: "15px", sm: "15px", md: "15px" },
-                  mb: { xs: "-20px", md: "-20px", lg: "-20px" },
+                  fontSize: { xs: "12px", sm: "13px", md: "15px" },
+                  mb: { xs: 0, md: "-20px", lg: "-20px" },
+                  mt: { xs: "2px", md: 0 },
                 }}
               >
                 Nirmal Health Care
