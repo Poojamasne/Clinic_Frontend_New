@@ -33,7 +33,7 @@ export default function Navbar() {
 
   // Show hamburger for iPad Mini, iPad Air, Surface Pro 7, and small devices
   // Show menu options for large desktop screens (1400px+)
-  const showMenuOptions = useMediaQuery("(min-width:1400px)");
+  const showMenuOptions = useMediaQuery("(min-width:1200px)");
   const isActive = (path) => {
     if (path === "/") {
       return location.pathname === "/";
