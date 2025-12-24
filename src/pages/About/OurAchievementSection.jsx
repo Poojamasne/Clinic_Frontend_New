@@ -33,8 +33,8 @@ export default function OurAchievementSection() {
     <Box
       sx={{
         width: "100%",
-        height: { xs: "auto", sm: "auto", md: "463px" },
-        minHeight: { xs: "300px", sm: "350px", md: "463px" },
+        height: { xs: "auto", sm: "auto", md: "400px" },
+        minHeight: { xs: "300px", sm: "350px", md: "400px" },
         backgroundColor: "#FFFFFF",
         display: "flex",
         alignItems: "center",
@@ -49,7 +49,7 @@ export default function OurAchievementSection() {
         sx={{
           width: "100%",
           maxWidth: { xs: "100%", sm: "600px", md: "900px", lg: "1200px", xl: "1319px" },
-          height: { xs: "auto", md: "auto", lg: "348px" },
+          height: { xs: "auto", md: "auto", lg: "340px" },
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -75,12 +75,12 @@ export default function OurAchievementSection() {
             variant="h2"
             sx={{
               fontFamily: "Poppins, sans-serif",
-              fontWeight: 700,
+              fontWeight: 500,
               fontSize: { 
                 xs: "26px", 
                 sm: "30px", 
                 md: "36px", 
-                lg: "42px", 
+                lg: "36px", 
                 xl: "48px" 
               },
               color: "#000000",
@@ -94,7 +94,7 @@ export default function OurAchievementSection() {
           <Typography
             sx={{
               fontFamily: "Poppins, sans-serif",
-              fontWeight: 400,
+              fontWeight: 500,
               fontSize: { 
                 xs: "16px", 
                 sm: "17px", 
@@ -142,7 +142,7 @@ export default function OurAchievementSection() {
                   md: "100%", 
                   lg: "430px" 
                 },
-                maxWidth: { xs: "100%", sm: "280px", md: "300px", lg: "428px" },
+                maxWidth: { xs: "100%", sm: "280px", md: "300px", lg: "421px" },
                 height: { xs: "auto", sm: "auto", md: "auto", lg: "60px" },
                 minHeight: { xs: "45px", sm: "50px", md: "55px", lg: "60px" },
                 display: "flex",
