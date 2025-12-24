@@ -13,7 +13,7 @@ import ContactCards from "./ContactCards";
 const Contact = () => {
   return (
     <Box sx={{ 
-      backgroundColor: '#ffffff', 
+      backgroundColor: '#FBF9FA', 
       minHeight: '100vh',
       py: { xs: 3, sm: 4, md: 5, lg: 6 },
       px: { xs: 2, sm: 3, md: 4, lg: 0 },

@@ -40,11 +40,11 @@ export default function TreatmentCard({ title, description, image, route }) {
         borderRadius: "12px",
         overflow: "hidden",
         backgroundColor: "#F2F8FF",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-        "&:hover": {
-          transform: "translateY(-8px)",
-          boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
-        },
+        // boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+        // "&:hover": {
+        //   transform: "translateY(-8px)",
+          
+        // },
       }}
     >
       <Box

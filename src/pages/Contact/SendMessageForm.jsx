@@ -212,7 +212,6 @@ const SendMessageForm = () => {
   };
 
   const subjects = [
-    "Select Subject",
     "General Inquiry ",
     "Appointment Inquiry",
     "Treatment Information",
@@ -495,6 +494,12 @@ const SendMessageForm = () => {
                 },
               }}
             >
+              {/* Placeholder */}
+    <MenuItem value="" disabled>
+      Select Subject
+    </MenuItem>
+
+
               {subjects.map((sub) => (
                 <MenuItem
                   key={sub}

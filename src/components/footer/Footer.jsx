@@ -454,63 +454,67 @@ export default function Footer() {
         />
 
         {/* BOTTOM BAR */}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            justifyContent: { xs: "center", sm: "space-between" },
-            alignItems: "center",
-            gap: { xs: 2, sm: 0 },
-            textAlign: { xs: "center", sm: "left" },
-          }}
-        >
-          <Typography
-            sx={{
-              fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
-              color: "#555",
-            }}
-          >
-            © 2025 zonixtec. All rights reserved.
-          </Typography>
+        {/* BOTTOM BAR */}
+<Box
+  sx={{
+    display: "flex",
+    flexDirection: { xs: "column", sm: "row" }, // stack vertically on mobile
+    justifyContent: { xs: "center", sm: "space-between" },
+    alignItems: "center",
+    gap: { xs: 1, sm: 0 },
+    textAlign: { xs: "center", sm: "left" },
+  }}
+>
+  {/* Links */}
+  <Box
+    sx={{
+      display: "flex",
+      gap: { xs: 2, sm: 3 },
+      flexWrap: "wrap",
+      justifyContent: { xs: "center", sm: "flex-end" },
+      order: { xs: 1, sm: 0 }, // links come first on mobile
+    }}
+  >
+    <MuiLink
+      component={Link}
+      to="/privacy-policy"
+      underline="none"
+      sx={{
+        color: "#555",
+        fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
+        "&:hover": { color: "#1976d2" },
+      }}
+    >
+      Privacy Policy
+    </MuiLink>
 
-          <Box
-            sx={{
-              display: "flex",
-              gap: { xs: 2, sm: 3 },
-              flexWrap: "wrap",
-              justifyContent: { xs: "center", sm: "flex-end" },
-            }}
-          >
-            {/* Privacy Policy Link */}
-            <MuiLink
-              component={Link}
-              to="/privacy-policy"
-              underline="none"
-              sx={{
-                color: "#555",
-                fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
-                "&:hover": { color: "#1976d2" },
-              }}
-            >
-              Privacy Policy
-            </MuiLink>
+    <MuiLink
+      component={Link}
+      to="/terms"
+      underline="none"
+      sx={{
+        color: "#555",
+        fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
+        "&:hover": { color: "#1976d2" },
+      }}
+    >
+      Terms & Conditions
+    </MuiLink>
+  </Box>
 
-            {/* Terms & Conditions Link */}
-            <MuiLink
-              component={Link}
-              to="/terms"
-              underline="none"
-              sx={{
-                color: "#555",
-                fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
-                "&:hover": { color: "#1976d2" },
-              }}
-              onClick={() => console.log("Terms link clicked")}
-            >
-              Terms & Conditions
-            </MuiLink>
-          </Box>
-        </Box>
+  {/* Copyright */}
+  <Typography
+    sx={{
+      fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
+      color: "#555",
+      mt: { xs: 1, sm: 0 },
+      order: { xs: 2, sm: 1 }, // copyright below links on mobile
+    }}
+  >
+    © 2025 zonixtec. All rights reserved.
+  </Typography>
+</Box>
+
       </Container>
     </Box>
   );

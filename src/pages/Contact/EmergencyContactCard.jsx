@@ -161,7 +161,7 @@ const EmergencyContactCard = () => {
           },
           transition: "all 0.2s ease",
         }}
-        onClick={() => (window.location.href = "tel:+919822141851")}
+        onClick={() => (window.location.href = "tel:+91 9822141851")}
       >
         {/* Phone Icon Container */}
         <Box
@@ -206,7 +206,7 @@ const EmergencyContactCard = () => {
             textOverflow: "ellipsis",
           }}
         >
-          +919822141851
+          +91 9822141851
         </Typography>
       </Box>
     </Box>
