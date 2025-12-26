@@ -48,9 +48,6 @@ export default function OurAchievementSection() {
         disableGutters
         sx={{
           width: "100%",
-<<<<<<< HEAD
-          maxWidth: { xs: "100%", sm: "600px", md: "900px", lg: "1200px", xl: "1319px" },
-=======
           maxWidth: {
             xs: "100%",
             sm: "600px",
@@ -58,7 +55,6 @@ export default function OurAchievementSection() {
             lg: "1200px",
             xl: "1319px",
           },
->>>>>>> 73529526feb9c1b21c39ee08d770b58059cebfb1
           height: { xs: "auto", md: "auto", lg: "340px" },
           display: "flex",
           flexDirection: "column",
@@ -83,21 +79,12 @@ export default function OurAchievementSection() {
             sx={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: 500,
-<<<<<<< HEAD
-              fontSize: { 
-                xs: "26px", 
-                sm: "30px", 
-                md: "36px", 
-                lg: "36px", 
-                xl: "48px" 
-=======
               fontSize: {
                 xs: "26px",
                 sm: "30px",
                 md: "36px",
                 lg: "36px",
                 xl: "48px",
->>>>>>> 73529526feb9c1b21c39ee08d770b58059cebfb1
               },
               color: "#000000",
               lineHeight: { xs: 1.3, sm: 1.2, md: 1.2 },
@@ -111,21 +98,12 @@ export default function OurAchievementSection() {
             sx={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: 500,
-<<<<<<< HEAD
-              fontSize: { 
-                xs: "16px", 
-                sm: "17px", 
-                md: "18px", 
-                lg: "19px", 
-                xl: "20px" 
-=======
               fontSize: {
                 xs: "16px",
                 sm: "17px",
                 md: "18px",
                 lg: "19px",
                 xl: "20px",
->>>>>>> 73529526feb9c1b21c39ee08d770b58059cebfb1
               },
               color: "#000000",
               lineHeight: { xs: 1.4, sm: 1.5, md: 1.5 },
@@ -161,19 +139,11 @@ export default function OurAchievementSection() {
             <Box
               key={achievement.id}
               sx={{
-<<<<<<< HEAD
-                width: { 
-                  xs: "100%", 
-                  sm: "100%", 
-                  md: "100%", 
-                  lg: "430px" 
-=======
                 width: {
                   xs: "100%",
                   sm: "100%",
                   md: "100%",
                   lg: "430px",
->>>>>>> 73529526feb9c1b21c39ee08d770b58059cebfb1
                 },
                 maxWidth: { xs: "100%", sm: "280px", md: "300px", lg: "421px" },
                 height: { xs: "auto", sm: "auto", md: "auto", lg: "60px" },
