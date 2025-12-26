@@ -5,23 +5,23 @@ export default function OurAchievementSection() {
   const achievements = [
     {
       id: 1,
-      title: "26+ Years of Excellence in Healthcare",
+      title: "Excellence in Homeopathic Research ",
     },
     {
       id: 2,
-      title: "Over 15,000 Successful Happy Patients",
+      title: "National Recognition in Homeopathic Care",
     },
     {
       id: 3,
-      title: "Expert Team of Medical Professionals",
+      title: "Featured for Trusted Homeopathic Expertise",
     },
     {
       id: 4,
-      title: "State-of-the-Art Medical Facilities",
+      title: "26+ Years of Homeopathic Excellence",
     },
     {
       id: 5,
-      title: "Internationally Recognized Certifications",
+      title: "15,000+ Patients Healed with Homeopathy",
     },
     {
       id: 6,
@@ -33,8 +33,8 @@ export default function OurAchievementSection() {
     <Box
       sx={{
         width: "100%",
-        height: { xs: "auto", sm: "auto", md: "463px" },
-        minHeight: { xs: "300px", sm: "350px", md: "463px" },
+        height: { xs: "auto", sm: "auto", md: "400px" },
+        minHeight: { xs: "300px", sm: "350px", md: "400px" },
         backgroundColor: "#FFFFFF",
         display: "flex",
         alignItems: "center",
@@ -48,16 +48,19 @@ export default function OurAchievementSection() {
         disableGutters
         sx={{
           width: "100%",
-          maxWidth: { xs: "100%", sm: "600px", md: "900px", lg: "1200px", xl: "1319px" },
-          height: { xs: "auto", md: "auto", lg: "348px" },
+          maxWidth: {
+            xs: "100%",
+            sm: "600px",
+            md: "900px",
+            lg: "1200px",
+            xl: "1319px",
+          },
+          height: { xs: "auto", md: "auto", lg: "340px" },
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           gap: { xs: 3, sm: 4, md: "34px" },
-          
-          
-          
         }}
       >
         {/* Header Section */}
@@ -75,13 +78,13 @@ export default function OurAchievementSection() {
             variant="h2"
             sx={{
               fontFamily: "Poppins, sans-serif",
-              fontWeight: 700,
-              fontSize: { 
-                xs: "26px", 
-                sm: "30px", 
-                md: "36px", 
-                lg: "42px", 
-                xl: "48px" 
+              fontWeight: 500,
+              fontSize: {
+                xs: "26px",
+                sm: "30px",
+                md: "36px",
+                lg: "36px",
+                xl: "48px",
               },
               color: "#000000",
               lineHeight: { xs: 1.3, sm: 1.2, md: 1.2 },
@@ -94,13 +97,13 @@ export default function OurAchievementSection() {
           <Typography
             sx={{
               fontFamily: "Poppins, sans-serif",
-              fontWeight: 400,
-              fontSize: { 
-                xs: "16px", 
-                sm: "17px", 
-                md: "18px", 
-                lg: "19px", 
-                xl: "20px" 
+              fontWeight: 500,
+              fontSize: {
+                xs: "16px",
+                sm: "17px",
+                md: "18px",
+                lg: "19px",
+                xl: "20px",
               },
               color: "#000000",
               lineHeight: { xs: 1.4, sm: 1.5, md: 1.5 },
@@ -136,26 +139,26 @@ export default function OurAchievementSection() {
             <Box
               key={achievement.id}
               sx={{
-                width: { 
-                  xs: "100%", 
-                  sm: "100%", 
-                  md: "100%", 
-                  lg: "400px" 
+                width: {
+                  xs: "100%",
+                  sm: "100%",
+                  md: "100%",
+                  lg: "430px",
                 },
-                maxWidth: { xs: "100%", sm: "280px", md: "300px", lg: "400px" },
+                maxWidth: { xs: "100%", sm: "280px", md: "300px", lg: "421px" },
                 height: { xs: "auto", sm: "auto", md: "auto", lg: "60px" },
                 minHeight: { xs: "45px", sm: "50px", md: "55px", lg: "60px" },
                 display: "flex",
                 alignItems: "center",
                 gap: { xs: "8px", sm: "10px", md: "10px", lg: "10px" },
-                backgroundColor: "white",
+                backgroundColor: "#F4F9FF",
                 borderRadius: { xs: "6px", sm: "7px", md: "8px", lg: "9px" },
                 border: "1px solid #155DFC",
-                p: { 
-                  xs: "6px 10px", 
-                  sm: "8px 12px", 
-                  md: "9px 14px", 
-                  lg: "10px 16px" 
+                p: {
+                  xs: "6px 10px",
+                  sm: "8px 12px",
+                  md: "9px 14px",
+                  lg: "10px 16px",
                 },
                 boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
                 transition: "all 0.3s ease",
@@ -183,11 +186,11 @@ export default function OurAchievementSection() {
                 sx={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: 500,
-                  fontSize: { 
-                    xs: "13px", 
-                    sm: "14px", 
-                    md: "15px", 
-                    lg: "16px" 
+                  fontSize: {
+                    xs: "13px",
+                    sm: "14px",
+                    md: "15px",
+                    lg: "16px",
                   },
                   color: "#333333",
                   lineHeight: { xs: 1.3, sm: 1.4, md: 1.4, lg: 1.4 },

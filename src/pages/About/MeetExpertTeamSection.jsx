@@ -4,7 +4,6 @@ import DrNitin from "../../assets/Expert_Teams/Dr. Nitin Darda.png";
 import DrYogita from "../../assets/Expert_Teams/Dr. Yogita Darda.png";
 import DrTanmay from "../../assets/Expert_Teams/Dr. Tanmay Darda.png";
 
-
 const doctors = [
   {
     name: "Dr. Nitin Darda",
@@ -17,8 +16,10 @@ const doctors = [
         </Typography>{" "}
         <Typography component="span" sx={{ fontWeight: 300 }}>
           Spine disorders, chronic back pain, and urine/kidney-related issues
-          <br /><br />
-          Experienced in treating a wide range of health conditions through classical and advanced homeopathy.
+          <br />
+          <br />
+          Experienced in treating a wide range of health conditions through
+          classical and advanced homeopathy.
         </Typography>
       </>
     ),
@@ -33,9 +34,12 @@ const doctors = [
           Special Expertise:
         </Typography>{" "}
         <Typography component="span" sx={{ fontWeight: 300 }}>
-          Skin and hair problems, acne, pigmentation, allergies, and hair fall management.
-          <br /><br />
-          Treats various acute and chronic diseases with modern homeopathic principles.
+          Skin and hair problems, acne, pigmentation, allergies, and hair fall
+          management.
+          <br />
+          <br />
+          Treats various acute and chronic diseases with modern homeopathic
+          principles.
         </Typography>
       </>
     ),
@@ -51,17 +55,15 @@ const doctors = [
         </Typography>{" "}
         <Typography component="span" sx={{ fontWeight: 300 }}>
           Gut health, digestive disorders, acidity, IBS, and gastric issues.
-          <br /><br />
-          Highly experienced in holistic homeopathic care for all age groups and chronic health concerns.
+          <br />
+          <br />
+          Highly experienced in holistic homeopathic care for all age groups and
+          chronic health concerns.
         </Typography>
       </>
     ),
   },
 ];
-
-
-
-
 
 export default function ExpertDoctorsSection() {
   return (
@@ -69,11 +71,10 @@ export default function ExpertDoctorsSection() {
       sx={{
         width: "100%",
         py: { xs: 4, sm: 5, md: 6, lg: 8 },
-        backgroundColor: "#ffffff",
+        backgroundColor: "#FBF9FA",
       }}
     >
       <Container maxWidth="xl">
-       
         <Box sx={{ textAlign: "center", mb: { xs: 4, sm: 5, md: 6 } }}>
           <Typography
             variant="h2"
@@ -101,7 +102,8 @@ export default function ExpertDoctorsSection() {
               mx: "auto",
             }}
           >
-          Our doctors are highly qualified professionals dedicated to your health and well-being
+            Our doctors are highly qualified professionals dedicated to your
+            health and well-being
           </Typography>
         </Box>
 
@@ -128,13 +130,12 @@ export default function ExpertDoctorsSection() {
               }}
             >
               <DoctorCard
-  name={doctor.name}
-  specialty={doctor.specialty}
-  image={doctor.image}
-  qualification={doctor.qualification}
-  description={doctor.description}
-/>
-
+                name={doctor.name}
+                specialty={doctor.specialty}
+                image={doctor.image}
+                qualification={doctor.qualification}
+                description={doctor.description}
+              />
             </Grid>
           ))}
         </Grid>

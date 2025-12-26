@@ -20,7 +20,7 @@ import locationIcon from "../../assets/clinic/Footer/Location.svg";
 export default function Footer() {
   // Map Quick Links to their routes
   const quickLinksMap = {
-    "Home": "/",
+    Home: "/",
     "About Us": "/about",
     "Book Appointment": "/appointment",
     "Contact Us": "/contact",
@@ -30,7 +30,7 @@ export default function Footer() {
   const treatmentRouteMap = {
     "Spine Treatments": "/treatments/spine-treatments",
     "GIT Treatments": "/treatments/git-treatments",
-    "Cosmetology": "/treatments/cosmetology",
+    Cosmetology: "/treatments/cosmetology",
     "Kidney Treatment": "/treatments/kidney-treatment",
     "Gynecologist Treatment": "/treatments/gynecologist-treatment",
     "Migraine Treatment": "/treatments/migraine-treatment",
@@ -91,7 +91,7 @@ export default function Footer() {
             sx={{
               width: { xs: "100%", sm: "200px", md: "300px" },
               mr: { lg: "110px" },
-              ml: { lg: "110px" },
+              ml: { lg: "0px" },
             }}
           >
             <Box
@@ -191,7 +191,7 @@ export default function Footer() {
             xs={12}
             sm={6}
             md={3}
-            sx={{ width: { xs: "100%", sm: "150px", md: "155px" } }}
+            sx={{ width: { xs: "100%", sm: "150px", md: "180px" } }}
           >
             <Typography
               sx={{
@@ -249,7 +249,7 @@ export default function Footer() {
             xs={12}
             sm={6}
             md={3}
-            sx={{ width: { xs: "100%", sm: "150px", md: "auto" } }}
+            sx={{ width: { xs: "100%", sm: "157px", md: "220px" } }}
           >
             <Typography
               sx={{
@@ -278,7 +278,7 @@ export default function Footer() {
                 "GIT Treatments",
                 "Cosmetology",
                 "Kidney Treatment",
-                "Gynecologist Treatment",
+                "Gynecology Treatment",
                 "Migraine Treatment",
                 "ENT Treatments",
                 "Joint Treatments",
