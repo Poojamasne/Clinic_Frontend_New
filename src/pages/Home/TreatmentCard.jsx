@@ -24,13 +24,13 @@ export default function TreatmentCard({ title, description, image, route }) {
         maxWidth: {
           xs: "100%", // mobile = full width
           sm: "300px", // small tablet
-          md: "280px", // iPad Mini/Air/Pro
-          lg: "360px", // laptop
-          xl: "380px", // big monitors
+          md: "270px", // iPad Mini/Air/Pro
+          lg: "400px", // laptop
+          xl: "400px", // big monitors
         },
-        height: {
+        minHeight: {
           xs: 360,
-          sm: 380,
+          sm: 400,
           md: 420,
           lg: 490,
         },
@@ -43,7 +43,7 @@ export default function TreatmentCard({ title, description, image, route }) {
         // boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
         // "&:hover": {
         //   transform: "translateY(-8px)",
-          
+
         // },
       }}
     >

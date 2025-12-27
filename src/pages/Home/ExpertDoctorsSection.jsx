@@ -31,7 +31,20 @@ export default function ExpertDoctorsSection() {
         backgroundColor: "#FBF9FA",
       }}
     >
-      <Container maxWidth="xl">
+      <Container
+        maxWidth={false}
+        disableGutters
+        sx={{
+          maxWidth: "1440px",
+          px: {
+            xs: "25px", // phones → no padding
+            sm: "25px", // small tablets → no padding
+            md: "66px", // desktop and up → exact Figma spacing
+          },
+          mx: "auto",
+        }}
+      >
+        {" "}
         {/* Section Header */}
         <Box sx={{ textAlign: "center", mb: { xs: 4, sm: 5, md: 6 } }}>
           <Typography
@@ -65,11 +78,10 @@ export default function ExpertDoctorsSection() {
             is dedicated to providing you with the best care possible.
           </Typography>
         </Box>
-
         {/* Doctor Cards Grid */}
         <Grid
           container
-          spacing={{ xs: 4, sm: 5, md: 6, lg: 11 }}
+          spacing={{ xs: 4, sm: 5, md: 6, lg: 6 }}
           justifyContent="center"
           sx={{
             "& .MuiGrid-item": {

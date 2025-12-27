@@ -125,17 +125,8 @@ export default function AboutHeroSection() {
                   textAlign: { xs: "justify", sm: "left" },
                 }}
               >
-<<<<<<< HEAD
-               Nirmal Health Care carries a legacy built over two generations — a legacy shaped by compassion, trust, and an unwavering commitment to holistic homeopathic healing. The foundation of this clinic was laid with a simple philosophy:
- listen deeply, understand fully, and heal gently.
-
-=======
-                Nirmal Health Care carries a legacy built over two generations —
-                a legacy shaped by compassion, trust, and an unwavering
-                commitment to holistic homeopathic healing. The foundation of
-                this clinic was laid with a simple philosophy: listen deeply,
-                understand fully, and heal gently.
->>>>>>> 73529526feb9c1b21c39ee08d770b58059cebfb1
+                Nirmal Health Care carries a legacy built over two generations — a legacy shaped by compassion, trust, and an unwavering commitment to holistic homeopathic healing. The foundation of this clinic was laid with a simple philosophy:
+                listen deeply, understand fully, and heal gently.
               </Typography>
 
               <Typography
@@ -153,16 +144,7 @@ export default function AboutHeroSection() {
                   textAlign: { xs: "justify", sm: "left" },
                 }}
               >
-<<<<<<< HEAD
                 As the second generation stepped in, we continued those values while bringing a more thoughtful, modern approach to homeopathic treatment and natural healing. What began as a small effort to help the community has grown into a trusted holistic healthcare centre where individuals and families — from Pune and around the world — find comfort, clarity, and long-term wellness.
-=======
-                As the second generation stepped in, we continued those values
-                while bringing a more thoughtful, modern approach to homeopathic
-                treatment and natural healing. What began as a small effort to
-                help the community has grown into a trusted holistic healthcare
-                centre where individuals and families — from Pune and around the
-                world — find comfort, clarity, and long-term wellness.
->>>>>>> 73529526feb9c1b21c39ee08d770b58059cebfb1
               </Typography>
 
               <Typography
@@ -181,19 +163,10 @@ export default function AboutHeroSection() {
                 }}
               >
                 Even today, our purpose remains unchanged: <br />
-<<<<<<< HEAD
                 to provide a safe space where patients feel heard, supported, and cared for throughout their entire journey. <br/>
-                Because at Nirmal Health Care, healing isn’t just what we do — it’s who we are.
+                Because at Nirmal Health Care, healing isn't just what we do — it's who we are.
                 When care is genuine, healing becomes natural — and that belief continues to guide every 
                 generation that serves here.
-=======
-                to provide a safe space where patients feel heard, supported,
-                and cared for throughout their entire journey. <br />
-                Because at Nirmal Health Care, healing isn’t just what we do —
-                it’s who we are. When care is genuine, healing becomes natural —
-                and that belief continues to guide every generation that serves
-                here.
->>>>>>> 73529526feb9c1b21c39ee08d770b58059cebfb1
               </Typography>
             </Box>
           </Box>

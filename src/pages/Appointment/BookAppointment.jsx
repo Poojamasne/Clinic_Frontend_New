@@ -20,6 +20,84 @@ import {
 import { useNavigate } from "react-router-dom";
 import api from "../../api/axios";
 
+// Reusable validation functions
+const validators = {
+  // Name: Required, min 2 chars, only alphabets and spaces
+  validateName: (name) => {
+    const trimmed = name.trim();
+    if (!trimmed) {
+      return "Name is required";
+    }
+    if (trimmed.length < 2) {
+      return "Name must be at least 2 characters";
+    }
+    if (!/^[a-zA-Z\s]+$/.test(trimmed)) {
+      return "Name can only contain alphabets and spaces";
+    }
+    return "";
+  },
+
+  // Phone: Required, exactly 10 digits, must start with 6, 7, 8, or 9
+  validatePhone: (phone) => {
+    if (!phone) {
+      return "Phone number is required";
+    }
+    // Remove any non-digit characters for validation
+    const digitsOnly = phone.replace(/\D/g, "");
+    if (digitsOnly.length !== 10) {
+      return "Phone number must be 10 digits";
+    }
+    const firstDigit = parseInt(digitsOnly[0]);
+    if (![6, 7, 8, 9].includes(firstDigit)) {
+      return "Indian numbers must start with 6, 7, 8, or 9";
+    }
+    return "";
+  },
+
+  // Email: Required, valid format, only .com, .in, or .org domains
+  validateEmail: (email) => {
+    const trimmed = email.trim();
+    if (!trimmed) {
+      return "Email is required";
+    }
+    // Basic email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(trimmed)) {
+      return "Invalid email format";
+    }
+    // Check TLD
+    const tld = trimmed.split(".").pop().toLowerCase();
+    if (!["com", "in", "org"].includes(tld)) {
+      return "Only .com, .in, or .org domains are allowed";
+    }
+    return "";
+  },
+
+  // Date: Required
+  validateDate: (date) => {
+    if (!date) {
+      return "Date is required";
+    }
+    return "";
+  },
+
+  // Time: Required
+  validateTime: (time) => {
+    if (!time) {
+      return "Time is required";
+    }
+    return "";
+  },
+
+  // Service: Required
+  validateService: (service) => {
+    if (!service || !service.trim()) {
+      return "Treatment is required";
+    }
+    return "";
+  },
+};
+
 import UserIcon from "../../assets/Appointment/fullName.svg";
 import EmailIcon from "../../assets/Appointment/email.svg";
 import PhoneIcon from "../../assets/Appointment/Phone-number.svg";
@@ -190,18 +268,120 @@ const BookAppointment = () => {
   const [formErrors, setFormErrors] = useState({});
   const [bookedSlots, setBookedSlots] = useState([]);
   const [, setLoadingSlots] = useState(false);
+  
+  // Field-specific error states
+  const [fieldErrors, setFieldErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    date: "",
+    time: "",
+    service: "",
+  });
+
+  // Track which fields have been touched
+  const [touched, setTouched] = useState({
+    name: false,
+    email: false,
+    phone: false,
+    date: false,
+    time: false,
+    service: false,
+  });
+
+  // Validate a single field
+  const validateField = (name, value) => {
+    let error = "";
+    switch (name) {
+      case "name":
+        error = validators.validateName(value);
+        break;
+      case "email":
+        error = validators.validateEmail(value);
+        break;
+      case "phone":
+        error = validators.validatePhone(value);
+        break;
+      case "date":
+        error = validators.validateDate(value);
+        break;
+      case "time":
+        error = validators.validateTime(value);
+        break;
+      case "service":
+        error = validators.validateService(value);
+        break;
+      default:
+        break;
+    }
+    return error;
+  };
+
+  // Check if form is valid
+  const isFormValid = () => {
+    const nameError = validators.validateName(formData.name);
+    const emailError = validators.validateEmail(formData.email);
+    const phoneError = validators.validatePhone(formData.phone);
+    const dateError = validators.validateDate(formData.date);
+    const timeError = validators.validateTime(formData.time);
+    const serviceError = validators.validateService(formData.service);
+    
+    return !nameError && !emailError && !phoneError && !dateError && !timeError && !serviceError;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-    if (formErrors[name]) {
-      setFormErrors((prev) => ({
+    
+    // Special handling for phone: only allow digits
+    if (name === "phone") {
+      // Remove any non-digit characters
+      const digitsOnly = value.replace(/\D/g, "");
+      // Limit to 10 digits
+      const limitedDigits = digitsOnly.slice(0, 10);
+      
+      setFormData((prev) => ({
         ...prev,
-        [name]: "",
+        [name]: limitedDigits,
       }));
+      
+      // Validate phone in real-time
+      if (touched.phone) {
+        const error = validators.validatePhone(limitedDigits);
+        setFieldErrors((prev) => ({
+          ...prev,
+          phone: error,
+        }));
+        setFormErrors((prev) => ({
+          ...prev,
+          phone: error,
+        }));
+      }
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+      
+      // Real-time validation for other fields if touched
+      if (touched[name]) {
+        const error = validateField(name, value);
+        setFieldErrors((prev) => ({
+          ...prev,
+          [name]: error,
+        }));
+        setFormErrors((prev) => ({
+          ...prev,
+          [name]: error,
+        }));
+      } else {
+        // Clear error when user starts typing
+        if (formErrors[name]) {
+          setFormErrors((prev) => ({
+            ...prev,
+            [name]: "",
+          }));
+        }
+      }
     }
     
     // When date changes, fetch booked slots
@@ -212,7 +392,37 @@ const BookAppointment = () => {
         ...prev,
         time: "",
       }));
+      // Clear time error when date changes
+      setFieldErrors((prev) => ({
+        ...prev,
+        time: "",
+      }));
+      setFormErrors((prev) => ({
+        ...prev,
+        time: "",
+      }));
     }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    
+    // Mark field as touched
+    setTouched((prev) => ({
+      ...prev,
+      [name]: true,
+    }));
+    
+    // Validate field
+    const fieldError = validateField(name, value);
+    setFieldErrors((prev) => ({
+      ...prev,
+      [name]: fieldError,
+    }));
+    setFormErrors((prev) => ({
+      ...prev,
+      [name]: fieldError,
+    }));
   };
   
   // Fetch booked time slots for a specific date
@@ -240,21 +450,32 @@ const BookAppointment = () => {
   };
 
   const validateForm = () => {
-    const errors = {};
+    // Mark all fields as touched
+    setTouched({
+      name: true,
+      email: true,
+      phone: true,
+      date: true,
+      time: true,
+      service: true,
+    });
 
-    if (!formData.name.trim()) errors.name = "Name is required";
-    if (!formData.email.trim()) {
-      errors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      errors.email = "Invalid email format";
-    }
-    if (!formData.phone.trim()) errors.phone = "Phone is required";
-    if (!formData.date) errors.date = "Date is required";
-    if (!formData.time) errors.time = "Time is required";
-    if (!formData.service) errors.service = "Treatment is required";
+    // Validate all fields
+    const errors = {
+      name: validators.validateName(formData.name),
+      email: validators.validateEmail(formData.email),
+      phone: validators.validatePhone(formData.phone),
+      date: validators.validateDate(formData.date),
+      time: validators.validateTime(formData.time),
+      service: validators.validateService(formData.service),
+    };
 
+    setFieldErrors(errors);
     setFormErrors(errors);
-    return Object.keys(errors).length === 0;
+
+    // Check if any errors exist
+    const hasErrors = Object.values(errors).some((error) => error !== "");
+    return !hasErrors;
   };
 
   const handleSubmit = async (e) => {
@@ -402,8 +623,9 @@ const BookAppointment = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  error={!!formErrors.name}
-                  helperText={formErrors.name}
+                  onBlur={handleBlur}
+                  error={touched.name && !!fieldErrors.name}
+                  helperText={touched.name ? fieldErrors.name : ""}
                   placeholder="Enter Your Full Name"
                   variant="outlined"
                   size="small"
@@ -414,14 +636,14 @@ const BookAppointment = () => {
                       borderRadius: "8px",
                       backgroundColor: "#FAFAFA",
                       "& fieldset": {
-                        borderColor: "#E0E0E0",
+                        borderColor: touched.name && fieldErrors.name ? "#d32f2f" : "#E0E0E0",
                         borderWidth: "1px",
                       },
                       "&:hover fieldset": {
-                        borderColor: "#1976d2",
+                        borderColor: touched.name && fieldErrors.name ? "#d32f2f" : "#1976d2",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#1976d2",
+                        borderColor: touched.name && fieldErrors.name ? "#d32f2f" : "#1976d2",
                         borderWidth: "1px",
                       },
                     },
@@ -433,6 +655,11 @@ const BookAppointment = () => {
                       "&::placeholder": {
                         color: "#999999",
                       },
+                    },
+                    "& .MuiFormHelperText-root": {
+                      marginLeft: 0,
+                      marginTop: "4px",
+                      color: "#d32f2f",
                     },
                   }}
                 />
@@ -484,8 +711,9 @@ const BookAppointment = () => {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        error={!!formErrors.email}
-                        helperText={formErrors.email}
+                        onBlur={handleBlur}
+                        error={touched.email && !!fieldErrors.email}
+                        helperText={touched.email ? fieldErrors.email : ""}
                         placeholder="Rahul.Joshi@email.com"
                         variant="outlined"
                         size="small"
@@ -497,14 +725,14 @@ const BookAppointment = () => {
                             backgroundColor: "#FAFAFA",
                             gap: "10px",
                             "& fieldset": {
-                              borderColor: "#E0E0E0",
+                              borderColor: touched.email && fieldErrors.email ? "#d32f2f" : "#E0E0E0",
                               borderWidth: "1px",
                             },
                             "&:hover fieldset": {
-                              borderColor: "#1976d2",
+                              borderColor: touched.email && fieldErrors.email ? "#d32f2f" : "#1976d2",
                             },
                             "&.Mui-focused fieldset": {
-                              borderColor: "#1976d2",
+                              borderColor: touched.email && fieldErrors.email ? "#d32f2f" : "#1976d2",
                               borderWidth: "1px",
                             },
                           },
@@ -521,6 +749,7 @@ const BookAppointment = () => {
                           "& .MuiFormHelperText-root": {
                             marginLeft: 0,
                             marginTop: "4px",
+                            color: "#d32f2f",
                           },
                         }}
                       />
@@ -558,11 +787,17 @@ const BookAppointment = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        error={!!formErrors.phone}
-                        helperText={formErrors.phone}
-                        placeholder="+91 123 456 7890"
+                        onBlur={handleBlur}
+                        error={touched.phone && !!fieldErrors.phone}
+                        helperText={touched.phone ? fieldErrors.phone : ""}
+                        placeholder="Enter 10-digit phone number"
                         variant="outlined"
                         size="small"
+                        inputProps={{
+                          inputMode: "numeric",
+                          pattern: "[0-9]*",
+                          maxLength: 10,
+                        }}
                         sx={{
                           width: { xs: "100%", md: "358px" },
                           "& .MuiOutlinedInput-root": {
@@ -571,14 +806,14 @@ const BookAppointment = () => {
                             backgroundColor: "#FAFAFA",
                             gap: "10px",
                             "& fieldset": {
-                              borderColor: "#E0E0E0",
+                              borderColor: touched.phone && fieldErrors.phone ? "#d32f2f" : "#E0E0E0",
                               borderWidth: "1px",
                             },
                             "&:hover fieldset": {
-                              borderColor: "#1976d2",
+                              borderColor: touched.phone && fieldErrors.phone ? "#d32f2f" : "#1976d2",
                             },
                             "&.Mui-focused fieldset": {
-                              borderColor: "#1976d2",
+                              borderColor: touched.phone && fieldErrors.phone ? "#d32f2f" : "#1976d2",
                               borderWidth: "1px",
                             },
                           },
@@ -595,6 +830,7 @@ const BookAppointment = () => {
                           "& .MuiFormHelperText-root": {
                             marginLeft: 0,
                             marginTop: "4px",
+                            color: "#d32f2f",
                           },
                         }}
                       />
@@ -640,7 +876,7 @@ const BookAppointment = () => {
                   </Typography>
                 </Box>
                 <FormControl
-                  error={!!formErrors.service}
+                  error={touched.service && !!fieldErrors.service}
                   sx={{
                     width: { xs: "100%", md: "738px" },
                     "& .MuiOutlinedInput-root": {
@@ -648,14 +884,14 @@ const BookAppointment = () => {
                       borderRadius: "8px",
                       backgroundColor: "#FAFAFA",
                       "& fieldset": {
-                        borderColor: "#E0E0E0",
+                        borderColor: touched.service && fieldErrors.service ? "#d32f2f" : "#E0E0E0",
                         borderWidth: "1px",
                       },
                       "&:hover fieldset": {
-                        borderColor: "#1976d2",
+                        borderColor: touched.service && fieldErrors.service ? "#d32f2f" : "#1976d2",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#1976d2",
+                        borderColor: touched.service && fieldErrors.service ? "#d32f2f" : "#1976d2",
                         borderWidth: "1px",
                       },
                     },
@@ -664,7 +900,15 @@ const BookAppointment = () => {
                   <Select
                     name="service"
                     value={formData.service}
-                    onChange={handleChange}
+                    onChange={(e) => {
+                      handleChange(e);
+                      // Mark as touched and validate immediately for select
+                      setTouched((prev) => ({ ...prev, service: true }));
+                      const error = validators.validateService(e.target.value);
+                      setFieldErrors((prev) => ({ ...prev, service: error }));
+                      setFormErrors((prev) => ({ ...prev, service: error }));
+                    }}
+                    onBlur={handleBlur}
                     displayEmpty
                     sx={{
                       height: "47px",
@@ -686,9 +930,9 @@ const BookAppointment = () => {
                       </MenuItem>
                     ))}
                   </Select>
-                  {formErrors.service && (
+                  {touched.service && fieldErrors.service && (
                     <FormHelperText sx={{ color: "#d32f2f", marginLeft: 0 }}>
-                      {formErrors.service}
+                      {fieldErrors.service}
                     </FormHelperText>
                   )}
                 </FormControl>
@@ -740,8 +984,9 @@ const BookAppointment = () => {
                         type="date"
                         value={formData.date}
                         onChange={handleChange}
-                        error={!!formErrors.date}
-                        helperText={formErrors.date}
+                        onBlur={handleBlur}
+                        error={touched.date && !!fieldErrors.date}
+                        helperText={touched.date ? fieldErrors.date : ""}
                         variant="outlined"
                         size="small"
                         InputLabelProps={{ shrink: true }}
@@ -754,14 +999,14 @@ const BookAppointment = () => {
                             backgroundColor: "#FAFAFA",
                             gap: "10px",
                             "& fieldset": {
-                              borderColor: "#E0E0E0",
+                              borderColor: touched.date && fieldErrors.date ? "#d32f2f" : "#E0E0E0",
                               borderWidth: "1px",
                             },
                             "&:hover fieldset": {
-                              borderColor: "#1976d2",
+                              borderColor: touched.date && fieldErrors.date ? "#d32f2f" : "#1976d2",
                             },
                             "&.Mui-focused fieldset": {
-                              borderColor: "#1976d2",
+                              borderColor: touched.date && fieldErrors.date ? "#d32f2f" : "#1976d2",
                               borderWidth: "1px",
                             },
                           },
@@ -775,6 +1020,7 @@ const BookAppointment = () => {
                           "& .MuiFormHelperText-root": {
                             marginLeft: 0,
                             marginTop: "4px",
+                            color: "#d32f2f",
                           },
                         }}
                       />
@@ -809,7 +1055,7 @@ const BookAppointment = () => {
                         </Typography>
                       </Box>
                       <FormControl
-                        error={!!formErrors.time}
+                        error={touched.time && !!fieldErrors.time}
                         sx={{
                           width: { xs: "100%", md: "358px" },
                           "& .MuiOutlinedInput-root": {
@@ -818,14 +1064,14 @@ const BookAppointment = () => {
                             backgroundColor: "#FAFAFA",
                             gap: "10px",
                             "& fieldset": {
-                              borderColor: "#E0E0E0",
+                              borderColor: touched.time && fieldErrors.time ? "#d32f2f" : "#E0E0E0",
                               borderWidth: "1px",
                             },
                             "&:hover fieldset": {
-                              borderColor: "#1976d2",
+                              borderColor: touched.time && fieldErrors.time ? "#d32f2f" : "#1976d2",
                             },
                             "&.Mui-focused fieldset": {
-                              borderColor: "#1976d2",
+                              borderColor: touched.time && fieldErrors.time ? "#d32f2f" : "#1976d2",
                               borderWidth: "1px",
                             },
                           },
@@ -834,7 +1080,15 @@ const BookAppointment = () => {
                         <Select
                           name="time"
                           value={formData.time}
-                          onChange={handleChange}
+                          onChange={(e) => {
+                            handleChange(e);
+                            // Mark as touched and validate immediately for select
+                            setTouched((prev) => ({ ...prev, time: true }));
+                            const error = validators.validateTime(e.target.value);
+                            setFieldErrors((prev) => ({ ...prev, time: error }));
+                            setFormErrors((prev) => ({ ...prev, time: error }));
+                          }}
+                          onBlur={handleBlur}
                           displayEmpty
                           sx={{
                             height: "47px",
@@ -874,11 +1128,11 @@ const BookAppointment = () => {
                             );
                           })}
                         </Select>
-                        {formErrors.time && (
+                        {touched.time && fieldErrors.time && (
                           <FormHelperText
                             sx={{ color: "#d32f2f", marginLeft: 0 }}
                           >
-                            {formErrors.time}
+                            {fieldErrors.time}
                           </FormHelperText>
                         )}
                       </FormControl>
@@ -1051,7 +1305,7 @@ const BookAppointment = () => {
               <Button
                 type="submit"
                 variant="contained"
-                // navigate="https://rzp.io/rzp/oYQ5mtE"
+                disabled={!isFormValid()}
                 sx={{
                   backgroundColor: "#1976d2",
                   color: "white",
@@ -1064,6 +1318,10 @@ const BookAppointment = () => {
                   maxWidth: "738px",
                   "&:hover": {
                     backgroundColor: "#155DFC",
+                  },
+                  "&:disabled": {
+                    backgroundColor: "#9E9E9E",
+                    color: "white",
                   },
                 }}
               >

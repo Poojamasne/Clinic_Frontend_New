@@ -52,25 +52,17 @@ export default function Footer() {
       }}
     >
       <Container
-        maxWidth="false"
+        disableGutters
+        maxWidth={false}
         sx={{
-          width: {
-            xs: "100%",
-            sm: "100%",
-            md: "100%",
-            lg: "100%",
-            xl: "1440px",
-          },
-          maxWidth: {
-            xs: "100%",
-            sm: "100%",
-            md: "100%",
-            lg: "100%",
-            xl: "1440px",
-          },
-          px: { xs: 2, sm: 3, md: 4, lg: 4, xl: 0 },
+          maxWidth: "1440px",
           mx: "auto",
-          mb: "-19px",
+          px: {
+            xs: "5px", // phones → no padding
+            sm: "5px", // small tablets → no padding
+            md: "15px", // desktop and up → exact Figma spacing
+            lg: "32px",
+          },
         }}
       >
         <Grid

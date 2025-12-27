@@ -89,9 +89,22 @@ export default function TestimonialsSection() {
         backgroundColor: "#F4F9FF",
       }}
     >
-      <Container maxWidth="xl">
+      <Container
+        maxWidth={false}
+        sx={{
+          maxWidth: "1440px",
+          px: "32px", // 👈 reduce from 32 → 24 (or 28)
+          mx: "auto",
+        }}
+      >
         {/* Section Header */}
-        <Box sx={{ textAlign: "center", mb: { xs: 4, sm: 5, md: 6 } }}>
+        <Box
+          sx={{
+            textAlign: "center",
+            mb: { xs: 4, sm: 5, md: 6 },
+            maxWidth: 1376,
+          }}
+        >
           <Typography
             variant="h2"
             sx={{
@@ -127,6 +140,8 @@ export default function TestimonialsSection() {
         <Box
           ref={scrollContainerRef}
           sx={{
+            maxWidth: "1346px", // 👈 bound to 1376px
+            margin: "auto",
             display: "flex",
             gap: { xs: 4, sm: 5, md: 6, lg: 11 },
             overflowX: "auto",

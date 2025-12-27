@@ -18,24 +18,28 @@ export default function HeroSection() {
       }}
     >
       <Container
-        maxWidth="false"
+        maxWidth={false}
+        disableGutters
         sx={{
-          width: { xs: "100%", sm: "100%", md: "100%", lg: "1440px" },
+          maxWidth: "1440px",
+          px: { xs: 2, sm: 3, md: 4 },
+          mx: "auto",
+          margin: "auto",
         }}
       >
         <Box
           sx={{
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            gap: { xs: 4, sm: 5, md: 6 },
+            columnGap: { md: "67px" }, // exact gap
             alignItems: "center",
           }}
         >
           {/* LEFT CONTENT */}
           <Box
             sx={{
-              flex: { xs: "1 1 100%", md: "1 1 50%" },
-              width: { xs: "100%", md: "50%" },
+              flex: "1 1 0",
+              minWidth: 0,
             }}
           >
             <Typography
@@ -185,11 +189,11 @@ export default function HeroSection() {
           {/* RIGHT IMAGE */}
           <Box
             sx={{
-              flex: { xs: "1 1 100%", md: "1 1 50%" },
-              width: { xs: "100%", md: "50%" },
+              flex: { xs: "1 1 100%", md: "0 0 554px" },
+              width: { xs: "100%", md: "auto" },
               display: "flex",
               justifyContent: { xs: "center", md: "flex-end" },
-              alignItems: "center",
+              mt: { xs: 4, md: 0 },
             }}
           >
             <Box
@@ -197,9 +201,10 @@ export default function HeroSection() {
               src={heroImage}
               alt="Healthcare"
               sx={{
-                width: "100%",
-                maxWidth: { xs: "100%", sm: "450px", md: "500px", lg: "550px" },
-                height: { xs: "300px", sm: "400px", md: "500px", lg: "514px" },
+                width: { xs: "100%", sm: "90%", md: "554px" },
+                maxWidth: { xs: "100%", md: "554px" },
+                height: { xs: "auto", md: "514px" },
+                aspectRatio: { xs: "16/9", md: "auto" },
                 objectFit: "cover",
                 borderRadius: "12px",
                 boxShadow: "0 10px 30px rgba(0,0,0,0.1)",

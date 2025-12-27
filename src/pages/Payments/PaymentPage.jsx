@@ -338,44 +338,9 @@ const PaymentPage = () => {
           }}
         >
           <Button
-<<<<<<< HEAD
-  variant="outlined"
-  onClick={handleBack}
-  sx={{
-    borderColor: '#155DFC',
-    color: '#155DFC',
-    backgroundColor: '#EFEFEF',
-    fontSize: { xs: '14px', sm: '15px', md: '16px' },
-    fontWeight: 500,
-    padding: { xs: '10px 20px', sm: '12px 30px', md: '14px 40px' },
-    borderRadius: '8px',
-    textTransform: 'none',
-    width: { xs: '100%', sm: 'auto' },
-    minWidth: { xs: '100%', sm: '150px', md: '180px' },
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '8px', // spacing between arrow and text
-    '&:hover': {
-      borderColor: '#155DFC',
-      color: '#155DFC',
-      backgroundColor: '#EFEFEF',
-    }
-  }}
->
-  <span style={{ color: '#155DFC', fontWeight: 600 }}>←</span>
-  Back
-</Button>
-
-          
-          <Button
-            variant="contained"
-            onClick={() => navigate('https://rzp.io/rzp/oYQ5mtE')}
-=======
             variant="outlined"
             onClick={handleBack}
             disabled={isProcessing}
->>>>>>> 73529526feb9c1b21c39ee08d770b58059cebfb1
             sx={{
               borderColor: "#155DFC",
               color: "#155DFC",

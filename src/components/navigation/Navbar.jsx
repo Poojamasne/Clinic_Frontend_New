@@ -110,11 +110,12 @@ export default function Navbar() {
           sx={{
             py: { xs: 1, sm: 1.5 },
             px: 0,
-            height: { xs: "95px", sm: "95px", md: "75px" },
+            height: { xs: "75px", sm: "75px", md: "75px" },
           }}
         >
           <Container
-            maxWidth="false"
+            disableGutters
+            maxWidth={false}
             sx={{
               display: "flex",
               justifyContent: "space-between",
@@ -134,7 +135,7 @@ export default function Navbar() {
                 xl: "1440px",
               },
               height: { xs: "auto", sm: "auto", md: "82px" },
-              px: { xs: 2, sm: 3, md: 4, lg: 4, xl: 0 },
+              px: { xs: 2, sm: 3, md: 1, lg: 1, xl: "32px" },
               mx: "auto",
               overflow: "hidden",
             }}

@@ -85,7 +85,20 @@ export default function SpecializedTreatmentsSection() {
         backgroundColor: "#ffffff",
       }}
     >
-      <Container maxWidth="xl">
+      <Container
+        maxWidth={false}
+        disableGutters
+        sx={{
+          maxWidth: "1440px",
+          px: {
+            xs: "25px", // phones → no padding
+            sm: "25px", // small tablets → no padding
+            md: "66px", // desktop and up → exact Figma spacing
+          },
+          mx: "auto",
+        }}
+      >
+        {" "}
         {/* Section Header */}
         <Box sx={{ textAlign: "center", mb: { xs: 4, sm: 5, md: 6 } }}>
           <Typography
@@ -119,13 +132,16 @@ export default function SpecializedTreatmentsSection() {
             needs
           </Typography>
         </Box>
-
         {/* Treatment Cards Grid */}
         <Grid
           container
-          spacing={{ xs: 4, sm: 5, md: 6, lg: 11 }}
           justifyContent="center"
           sx={{
+            gap: {
+              xs: 3,
+              sm: 4,
+              md: 5,
+            },
             "& .MuiGrid-item": {
               display: "flex",
             },

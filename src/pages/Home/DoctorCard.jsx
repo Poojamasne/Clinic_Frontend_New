@@ -9,14 +9,14 @@ export default function DoctorCard({ name, specialty, image }) {
           xs: "270px", // mobile
           sm: "280px", // small tablets
           md: "300px", // iPad Mini/Air
-          lg: "360px", // laptop
-          xl: "380px", // large desktops (your Figma value)
+          lg: "396px", // laptop
+          xl: "396px", // large desktops (your Figma value)
         },
         height: {
           xs: 320,
           sm: 380,
-          md: 420,
-          lg: 470,
+          md: "411px",
+          lg: "411px",
         },
         mx: "auto",
         display: "flex",
@@ -24,7 +24,8 @@ export default function DoctorCard({ name, specialty, image }) {
         borderRadius: "23px",
         overflow: "hidden",
         backgroundColor: "#ffffffff",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+        boxShadow: "0px 4px 4px #DDE8FF",
+
         transition: "0.3s ease",
         "&:hover": {
           transform: "translateY(-8px)",
@@ -44,9 +45,10 @@ export default function DoctorCard({ name, specialty, image }) {
           alt={name}
           sx={{
             width: "100%",
-            height: { xs: "240px", sm: "220px", md: "340px" },
+            height: { xs: "240px", sm: "220px", md: "278px" },
             objectFit: "cover",
-            borderRadius: "8px",
+            borderTopLeftRadius: "8px",
+            borderTopRightRadius: "8px",
           }}
         />
       </Box>
