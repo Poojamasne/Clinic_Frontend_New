@@ -1,7 +1,18 @@
 import axios from "axios";
 
+// Get base URL from environment or use fallback
+const getBaseURL = () => {
+  // Try different environment variable names
+  const baseURL = 
+    import.meta.env.VITE_API_BASE_URL_DEVELOPMENT ||
+    import.meta.env.VITE_API_BASE_URL ||
+    "http://localhost:80/25th_decClinic_Website_Backend_PHP-"; // Fallback to common PHP backend URL
+  
+  return baseURL;
+};
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL_DEVELOPMENT, // 👈 HARD-CODED BACKEND
+  baseURL: getBaseURL(),
   withCredentials: true, // keep true if backend uses cookies
   headers: {
     "Content-Type": "application/json",

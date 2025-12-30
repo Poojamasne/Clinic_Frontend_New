@@ -1,42 +1,68 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import TestimonialCard from "./TestimonialCard";
-
-const testimonials = [
-  {
-    name: "Mrunal Kullkarni",
-    quote:
-      "The care I received was exceptional. My chronic back pain has significantly improved after treatment. Highly recommended!",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
-  },
-  {
-    name: "Sanket Kadam",
-    quote:
-      "The care I received was exceptional. My chronic back pain has significantly improved after treatment. Highly recommended!",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
-  },
-  {
-    name: "Rohine Despande",
-    quote:
-      "Professional staff and excellent treatment. My digestive issues are finally resolved. Thank you!",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
-  },
-];
+import { getTestimonials } from "../../api/testimonials.api";
 
 export default function TestimonialsSection() {
   const scrollContainerRef = useRef(null);
   const scrollIntervalRef = useRef(null);
   const isScrollingRef = useRef(true);
+  const [testimonials, setTestimonials] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Duplicate testimonials for seamless infinite scroll
-  const duplicatedTestimonials = [...testimonials, ...testimonials];
+  // Fetch testimonials from backend
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        setIsLoading(true);
+        const response = await getTestimonials();
+        
+        console.log("Testimonials API Response:", response); // Debug log
+        
+        // Check response structure - backend returns { success: true, data: { testimonials: [...] } }
+        if (response && response.success && response.data) {
+          const testimonialsData = response.data.testimonials || response.data;
+          
+          if (Array.isArray(testimonialsData) && testimonialsData.length > 0) {
+            // Map backend data to frontend format
+            const mappedTestimonials = testimonialsData.map((item) => ({
+              name: `${item.first_name || ""} ${item.last_name || ""}`.trim(),
+              quote: item.feedback || "",
+              image: item.image_url || null,
+            }));
+            
+            console.log("Mapped testimonials:", mappedTestimonials); // Debug log
+            setTestimonials(mappedTestimonials);
+          } else {
+            console.log("No testimonials in response or empty array");
+            setTestimonials([]);
+          }
+        } else {
+          console.log("Invalid response structure:", response);
+          setTestimonials([]);
+        }
+      } catch (error) {
+        console.error("Failed to fetch testimonials:", error);
+        console.error("Error details:", error.response?.data || error.message);
+        // Keep empty array on error - component will handle gracefully
+        setTestimonials([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
+    fetchTestimonials();
+  }, []);
+
+  // Duplicate testimonials for seamless infinite scroll (only if we have testimonials)
+  const duplicatedTestimonials = testimonials.length > 0 
+    ? [...testimonials, ...testimonials] 
+    : [];
+
+  // Auto-scroll effect - only start when testimonials are loaded
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
-    if (!scrollContainer) return;
+    if (!scrollContainer || duplicatedTestimonials.length === 0) return;
 
     const scroll = () => {
       if (!isScrollingRef.current) return;
@@ -79,7 +105,7 @@ export default function TestimonialsSection() {
       scrollContainer.removeEventListener("mouseenter", handleMouseEnter);
       scrollContainer.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, []);
+  }, [duplicatedTestimonials.length]);
 
   return (
     <Box
@@ -137,42 +163,86 @@ export default function TestimonialsSection() {
         </Box>
 
         {/* Testimonial Cards Auto-Scroll Container */}
-        <Box
-          ref={scrollContainerRef}
-          sx={{
-            maxWidth: "1346px", // 👈 bound to 1376px
-            margin: "auto",
-            display: "flex",
-            gap: { xs: 4, sm: 5, md: 6, lg: 11 },
-            overflowX: "auto",
-            overflowY: "hidden",
-            scrollbarWidth: "none", // Firefox
-            "&::-webkit-scrollbar": {
-              display: "none", // Chrome, Safari, Edge
-            },
-            pb: 2,
-            cursor: "grab",
-            "&:active": {
-              cursor: "grabbing",
-            },
-          }}
-        >
-          {duplicatedTestimonials.map((testimonial, index) => (
-            <Box
-              key={index}
+        {isLoading ? (
+          <Box
+            sx={{
+              textAlign: "center",
+              py: 4,
+            }}
+          >
+            <Typography
               sx={{
-                flexShrink: 0,
-                display: "flex",
+                fontFamily: "Poppins, sans-serif",
+                color: "#666",
               }}
             >
-              <TestimonialCard
-                name={testimonial.name}
-                quote={testimonial.quote}
-                image={testimonial.image}
-              />
-            </Box>
-          ))}
-        </Box>
+              Loading testimonials...
+            </Typography>
+          </Box>
+        ) : testimonials.length === 0 ? (
+          <Box
+            sx={{
+              textAlign: "center",
+              py: 4,
+            }}
+          >
+            <Typography
+              sx={{
+                fontFamily: "Poppins, sans-serif",
+                color: "#666",
+              }}
+            >
+              No testimonials available at the moment.
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: "Poppins, sans-serif",
+                color: "#999",
+                fontSize: "12px",
+                mt: 1,
+              }}
+            >
+              Check browser console for API errors
+            </Typography>
+          </Box>
+        ) : (
+          <Box
+            ref={scrollContainerRef}
+            sx={{
+              maxWidth: "1346px", // 👈 bound to 1376px
+              margin: "auto",
+              display: "flex",
+              gap: { xs: 4, sm: 5, md: 6, lg: 11 },
+              overflowX: "auto",
+              overflowY: "hidden",
+              scrollbarWidth: "none", // Firefox
+              "&::-webkit-scrollbar": {
+                display: "none", // Chrome, Safari, Edge
+              },
+              pb: 2,
+              cursor: "grab",
+              "&:active": {
+                cursor: "grabbing",
+              },
+            }}
+          >
+            {duplicatedTestimonials.map((testimonial, index) => (
+              <Box
+                key={`${testimonial.name}-${index}`}
+                sx={{
+                  flexShrink: 0,
+                  display: "flex",
+                }}
+              >
+                <TestimonialCard
+                  name={testimonial.name}
+                  quote={testimonial.quote}
+                  image={testimonial.image}
+                />
+              </Box>
+            ))}
+          </Box>
+        )}
       </Container>
     </Box>
   );
